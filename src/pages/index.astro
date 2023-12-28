@@ -1,12 +1,797 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="Alvaro > Resume">
-	<main class="flex flex-col mx-48 mt-20 items-center">
-		<div class="flex flex-col gap-4">
-			<p class="text-center text-6xl font-m-plus-2 font-thin"><span>Alvaro</span> J. Gaona</p>
-			<p class="text-center">Buenos Aires, Argentina</p>
-		</div>
-	</main>
+  <main
+    class="mx-96 my-20 flex flex-col rounded-lg bg-white p-32 shadow-md shadow-white"
+  >
+    <div class="flex flex-col gap-4">
+      <p class="font-m-plus-2 text-center text-6xl font-thin">
+        <span>Alvaro</span> J. Gaona
+      </p>
+      <p class="text-center italic">Buenos Aires, Argentina</p>
+    </div>
+    <div class="my-1 flex self-center text-xs">
+      <span class="border-r border-black px-1">(+54) 911 6797 1081</span>
+      <span class="border-r border-black px-1">alvgaona@gmail.com</span>
+      <span class="border-r border-black px-1">alvgaona.com</span>
+      <span class="border-r border-black px-1">alvgaona</span>
+      <span class="border-r border-black px-1">alvaro-gaona</span>
+      <span class="border-black px-1">Alvaro J. Gaona</span>
+    </div>
+    <section class="mt-4 flex flex-col gap-2">
+      <div class="flex">
+        <div class="text-2xl">Education</div>
+        <div class="w-full border-b border-slate-950 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4">
+        <li class="flex flex-col gap-2">
+          <div class="grid grid-cols-3">
+            <p class="text-lg font-semibold">University of Buenos Aires</p>
+            <p class="col-start-3 text-end text-sm">Buenos Aires, Argentina</p>
+            <p class="text-sm">Graduate in Electrical Engineering</p>
+            <p class="col-start-3 text-end text-sm">Mar. 2013 - Sep. 2019</p>
+            <ul
+              class="col-span-2 mt-2 flex list-inside list-disc flex-col gap-2 text-sm"
+            >
+              <li>
+                <span class="italic"
+                  >”Deep Recurrent Learning for Heart Sounds Segmentation based
+                  on Instantaneous Frequency Features”</span
+                >, Graduate Thesis, 2019. University of Buenos Aires. Grade
+                100/100.
+              </li>
+              <li>GPA: 3.5/4.0</li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <div class="grid grid-cols-3">
+            <p class="text-lg font-semibold">University of Buenos Aires</p>
+            <p class="col-start-3 text-end text-sm">Buenos Aires, Argentina</p>
+            <p class="text-sm">Graduate in Electrical Engineering</p>
+            <p class="col-start-3 text-end text-sm">Mar. 2013 - Sep. 2019</p>
+            <ul
+              class="col-span-2 mt-2 flex list-inside list-disc flex-col gap-2 text-sm"
+            >
+              <li>
+                <span class="italic"
+                  >”Deep Recurrent Learning for Heart Sounds Segmentation based
+                  on Instantaneous Frequency Features”</span
+                >, Graduate Thesis, 2019. University of Buenos Aires. Grade
+                100/100.
+              </li>
+              <li>GPA: 3.5/4.0</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="mt-4 flex flex-col gap-2">
+      <div class="flex">
+        <div class="text-2xl">Experience</div>
+        <div class="w-full border-b border-slate-950 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4">
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-col">
+            <p class="text-lg font-semibold">Lead Machine Learning Engineer</p>
+            <div class="flex flex-col text-sm">
+              <p>ASAPP</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Aug. 2022 - Present</p>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm"
+            >
+              <li class="text-justify">
+                As the lead engineer, I oversee the development and upkeep of
+                several machine learning services, particularly those related to
+                natural language processing (NLP) tasks like
+                speech&dash;to&dash;text, redaction, and summarization.
+              </li>
+              <li class="text-justify">
+                I&apos;m accountable for ensuring the optimal health and
+                performance of all our services, ensuring a superior user
+                experience.
+              </li>
+              <li class="text-justify">
+                I play a pivotal role in our cost&dash;reduction initiatives,
+                including the automation of GPU workload scaling for both
+                training and inference.
+              </li>
+              <li class="text-justify">
+                I maintain regular communication with other departments and
+                stakeholders throughout the organization.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">Universidad de 'San Andrés'</p>
+            <p>1yr</p>
+            <div class="mt-2 flex flex-col text-sm">
+              <p class="text-lg font-semibold">Teaching Assistant</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <div class="flex gap-2">
+                <p class="font-light">Mar. 2022 - Jul. 2022</p> &bullet; <p>
+                  5 mos
+                </p>
+              </div>
+              <ul
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm"
+              >
+                <li class="text-justify">
+                  My responsibilities include educating undergraduate students
+                  in AI engineering on the principles of ”Computational
+                  Thinking,” with a focus on practical application using Python.
+                </li>
+                <li class="text-justify">
+                  Additionally, I offer comprehensive support to first&dash;year
+                  students throughout their studies, helping them navigate the
+                  faculty and achieve their academic goals.
+                </li>
+              </ul>
+            </div>
+            <div class="mt-2 flex flex-col text-sm">
+              <p class="text-lg font-semibold">Research Engineer</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <div class="flex gap-2">
+                <p class="font-light">Aug. 2021 - Jul. 2022</p> &bullet; <p>
+                  1 y
+                </p>
+              </div>
+              <ul
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm"
+              >
+                <li class="text-justify">
+                  Conducted research on perception algorithms for self‑driving
+                  cars, investigating various techniques and algorithms to
+                  improve their effectiveness and reliability.
+                </li>
+                <li class="text-justify">
+                  Led a team in developing UAV landing algorithms that utilized
+                  computer vision technology to enable landing on moving
+                  platforms.
+                </li>
+                <li>
+                  Led a successful project utilizing computer vision and deep
+                  learning techniques to identify various skin diseases,
+                  resulting in the creation of a functional and accurate skin
+                  disease identification tool.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">Senior Software Engineer</p>
+            <div class="flex flex-col text-sm">
+              <p>Roche</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <div class="flex gap-2">
+                <p class="font-light">Feb. 2022 - Jul. 2022</p>
+                &bullet;
+                <p>1 yr</p>
+              </div>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Successfully migrated a core 500 GB database from Oracle to
+                PostgreSQL, ensuring minimal disruption to business operations.
+              </li>
+              <li>
+                Designed and implemented high-end, robust, and fault-tolerant
+                software responsible for designing NGS panels and conducting
+                cancer analyses on the cloud using frameworks such as Spring
+                Boot.
+              </li>
+              <li>
+                Redesigned the pricing calculator service, which could now
+                recommend the most suitable materials to be used with NGS
+                panels, resulting in more accurate and efficient cost
+                estimation.
+              </li>
+              <li>
+                Led the initiative to develop a tool capable of testing
+                bioinformatic pipeline integration on the cloud, significantly
+                reducing the risk of erroneous cancer analyses and improving
+                overall data quality.
+              </li>
+              <li>
+                Optimized testing suites run-time from days to minutes, allowing
+                for faster and more efficient testing of software components.
+              </li>
+              <li>
+                Provisioned cloud infrastructure on various AWS services such as
+                EC2, S3, Batch, VPC, ECR, Route53, ECR, and ECS, utilizing tools
+                such as Ansible, Packer, and Terraform for configuration
+                management and infrastructure as code.
+              </li>
+              <li>
+                Built fully automated CI/CD pipelines on Jenkins for both
+                instance-base and containerized applications, enabling efficient
+                deployment of software updates.
+              </li>
+              <li>
+                Participated in the technical hiring process of the team,
+                contributing to the recruitment and selection of highly skilled
+                professionals.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">Software Engineer</p>
+            <div class="flex flex-col text-sm">
+              <p>Telecom Argentina</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <div class="flex gap-2">
+                <p class="font-light">Dec. 2015 - Feb. 2019</p>
+                &bullet;
+                <p>3 yrs 3 mos</p>
+              </div>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Played a key role in developing an SDN controller responsible
+                for provisioning various services (Internet, L3VPN, L2VPN, VPLS)
+                in the backbone for over 1000 customers.
+              </li>
+              <li>
+                Designed and developed a custom IPAM (IP Address Manager)
+                application for internal use, enabling the engineering team to
+                effectively allocate both public and private IPv4/IPv6 addresses
+                for customers.
+              </li>
+              <li>
+                Led the design and implementation of the SDN controller's front
+                end using JavaScript ES6, React, and Redux, resulting in a
+                user-friendly and efficient interface for managing network
+                services.
+              </li>
+              <li>
+                Designed cloud-native applications using a microservices
+                architecture, both on-premises and in the cloud, enabling
+                efficient and scalable deployment of applications.
+              </li>
+              <li>
+                Managed the configuration and environment for workloads across
+                public and private clouds, including AWS and VMware
+                vSphere/NSX-V, ensuring high availability and optimal
+                performance.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">Electronics Technician</p>
+            <div class="flex flex-col text-sm">
+              <p>Servicio Meteorológico Nacional Argentino</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <div class="flex gap-2">
+                <p class="font-light">Feb. 2015 - Dec. 2015</p>
+                &bullet;
+                <p>11 mos</p>
+              </div>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Designed circuit boards used in a range of meteorological
+                measurement devices, contributing to the accurate and reliable
+                collection of weather data.
+              </li>
+              <li>
+                Successfully installed over 20 meteorological weather stations
+                across the entire country, ensuring comprehensive coverage of
+                weather patterns and phenomena.
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="mt-4 flex flex-col gap-2">
+      <div class="flex">
+        <div class="text-2xl">Volunteering</div>
+        <div class="w-full border-b border-slate-950 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4">
+        <li class="flex flex-col text-sm">
+          <span class="text-lg font-semibold">Contributor</span>
+          <span>PyTorch</span>
+          <div class="font-thin">
+            <span>Jul. 2020 &dash; Present</span>
+            &bullet;
+            <span>3 yrs 6 mos</span>
+          </div>
+          <span class="font-thin">Science and Technology</span>
+        </li>
+      </ul>
+    </section>
+    <section class="mt-4 flex flex-col gap-2">
+      <div class="flex">
+        <div class="text-2xl">Skills</div>
+        <div class="w-full border-b border-slate-950 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4">
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Autonomous Systems</span>
+          <div
+            class="grid grid-cols-6 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">Nobile Robotics</span>
+            <span class="rounded-lg bg-slate-700 py-1">Kinematics</span>
+            <span class="rounded-lg bg-slate-700 py-1">Vehicle Dynamics</span>
+            <span class="rounded-lg bg-slate-700 py-1">Sensor Fusion</span>
+            <span class="rounded-lg bg-slate-700 py-1">SLAM</span>
+            <span class="rounded-lg bg-slate-700 py-1">Navigation</span>
+            <span class="rounded-lg bg-slate-700 py-1">ROS/ROS2</span>
+            <span class="rounded-lg bg-slate-700 py-1">NVIDIA Isaac Sim</span>
+            <span class="rounded-lg bg-slate-700 py-1">Unity</span>
+            <span class="rounded-lg bg-slate-700 py-1">PX4</span>
+            <span class="rounded-lg bg-slate-700 py-1">Mavlink</span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Artificial Intelligence</span>
+          <div
+            class="grid grid-cols-5 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">Supervised Learning</span
+            >
+            <span class="rounded-lg bg-slate-700 py-1"
+              >Unsupervised Learning</span
+            >
+            <span class="rounded-lg bg-slate-700 py-1"
+              >Reinforcement Learning</span
+            >
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Mathematics</span>
+          <div
+            class="grid grid-cols-5 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">Linear Algebra</span>
+            <span class="rounded-lg bg-slate-700 py-1">Calculus</span>
+            <span class="rounded-lg bg-slate-700 py-1">Linear Systems</span>
+            <span class="rounded-lg bg-slate-700 py-1">Non-linear Systems</span>
+            <span class="rounded-lg bg-slate-700 py-1">Classic Control</span>
+            <span class="rounded-lg bg-slate-700 py-1">Modern Control</span>
+            <span class="rounded-lg bg-slate-700 py-1">Optimal Control</span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Programming Languages</span>
+          <div
+            class="grid grid-cols-7 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">C/C++</span>
+            <span class="rounded-lg bg-slate-700 py-1">C#</span>
+            <span class="rounded-lg bg-slate-700 py-1">Python</span>
+            <span class="rounded-lg bg-slate-700 py-1">Java</span>
+            <span class="rounded-lg bg-slate-700 py-1">TypeScript</span>
+            <span class="rounded-lg bg-slate-700 py-1">Go</span>
+            <span class="rounded-lg bg-slate-700 py-1">MATLAB/Simulink</span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Libraries &amp; Frameworks</span>
+          <div
+            class="grid grid-cols-8 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">OpenCV</span>
+            <span class="rounded-lg bg-slate-700 py-1">PCL</span>
+            <span class="rounded-lg bg-slate-700 py-1">Eigen</span>
+            <span class="rounded-lg bg-slate-700 py-1">PyTorch</span>
+            <span class="rounded-lg bg-slate-700 py-1">Tensorflow</span>
+            <span class="rounded-lg bg-slate-700 py-1">Gstreamer</span>
+            <span class="rounded-lg bg-slate-700 py-1">React</span>
+            <span class="rounded-lg bg-slate-700 py-1">NextJS</span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Software Engineering</span>
+          <div
+            class="grid grid-cols-5 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">AWS Services</span>
+            <span class="rounded-lg bg-slate-700 py-1"
+              >Google Cloud Platform</span
+            >
+            <span class="rounded-lg bg-slate-700 py-1">Azure</span>
+            <span class="rounded-lg bg-slate-700 py-1">Kubernetes</span>
+            <span class="rounded-lg bg-slate-700 py-1">Agile</span>
+            <span class="rounded-lg bg-slate-700 py-1">OOP</span>
+            <span class="rounded-lg bg-slate-700 py-1">Design Patterns</span>
+            <span class="rounded-lg bg-slate-700 py-1">Estimation</span>
+            <span class="rounded-lg bg-slate-700 py-1">Planning</span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <span class="font-semibold">Other skills</span>
+          <div
+            class="grid grid-cols-7 gap-1 text-center text-sm text-slate-200"
+          >
+            <span class="rounded-lg bg-slate-700 py-1">Teamwork</span>
+            <span class="rounded-lg bg-slate-700 py-1">Ownership</span>
+            <span class="rounded-lg bg-slate-700 py-1">Communication</span>
+            <span class="rounded-lg bg-slate-700 py-1">Leadership</span>
+            <span class="rounded-lg bg-slate-700 py-1">Self-motivated</span>
+            <span class="rounded-lg bg-slate-700 py-1">Public Speaking</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="mt-4 flex flex-col gap-2">
+      <div class="flex">
+        <div class="text-2xl">Projects</div>
+        <div class="w-full border-b border-slate-950 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4">
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-col">
+            <p class="text-lg font-semibold">Deep Learning Workshop</p>
+            <div class="flex flex-col text-sm">
+              <p>Universidad de 'San Andrés'</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Aug. 2021 - Aug. 2022</p>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Designed and delivered a comprehensive deep‑learning workshop
+                tailored for secondary school students. The workshop encompassed
+                foundational concepts such as the Rosenblatt Perceptron, linear
+                neural networks, multi‑layer linear neural networks utilizing
+                the MNIST dataset, and Convolutional Neural Networks applied to
+                the Kaggle Dataset named Flowers. The entire workshop was built
+                upon Jupyter Notebooks, utilizing PyTorch as the preferred
+                framework for deep learning.
+              </li>
+              <li>
+                Students successfully learned the concepts and built their own
+                deep‑learning models to classify images of flowers.
+              </li>
+              <li>
+                Workshop was a great success and students were very enthusiastic
+                about learning more about deep learning.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">Self-driving Car</p>
+            <div class="flex flex-col text-sm">
+              <p>Universidad de 'San Andrés'</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Aug. 2021 - Aug. 2022</p>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Engaged in the integration of a 2017 Ford Fusion, with
+                responsibilities spanning calibration and testing of a diverse
+                range of sensors.
+              </li>
+              <li>
+                Executed advanced algorithms dedicated to crucial aspects
+                including localization, perception, control, and planning.
+              </li>
+              <li>
+                Focused efforts on a 2017 Ford Fusion Hybrid featuring a
+                computer&dash;controlled drive&dash;by&dash;wire system,
+                allowing remote oversight of all vehicular operations.
+              </li>
+              <li>
+                Orchestrated the incorporation of cutting&dash;edge sensors,
+                encompassing LiDAR, cameras, radar, GPS, and a computer,
+                profoundly augmenting the vehicle&apos;s autonomous driving
+                proficiency.
+              </li>
+              <li>
+                All of the code was written in C++ with a few modules in Python,
+                and the car was compatible with ROS/ROS2.
+              </li>
+              <li>
+                Played a pivotal part in elevating the vehicle&apos;s autonomy
+                through meticulous environmental perception and comprehensive
+                analysis capabilities.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">
+              Fault-tolerant Control for Landing Maneuvers
+            </p>
+            <div class="flex flex-col text-sm">
+              <p>Universidad de 'San Andrés'</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Aug. 2021 - Aug. 2022</p>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Led the conceptualization and creation of a sophisticated
+                algorithm tailored for the precise landing of a
+                multirotoraircraft, demonstrating an exceptional aptitude for
+                problem&dash;solving and technical innovation.
+              </li>
+              <li>
+                Designed and developed the algorithm to operate seamlessly even
+                in scenarios involving engine failure, showcasing a keen
+                understanding of critical flight dynamics and safety protocols.
+              </li>
+              <li>
+                Constructed aerial vehicles from the ground up, employing a
+                specially crafted controller board equipped with an onboard
+                computer. Frequently, a Raspberry Pi was utilized for
+                high&dash;level functions. Alternatively, the Pixhawk 4
+                controller board, integrated with the PX4 autopilot flight
+                control software, was employed in certain instances.
+              </li>
+              <li>
+                Employed iterative refinement and rigorous testing methodologies
+                to ensure the algorithm&apos;s robustness and reliability,
+                resulting in a resilient solution capable of navigating complex
+                landing procedures with utmost precision.
+              </li>
+              <li>
+                Collaborated closely with a multidisciplinary team, effectively
+                communicating insights to ensure seamless integration of the
+                algorithm into the broader project framework.
+              </li>
+              <li>
+                Enhanced the overall safety and operational capabilities of the
+                multirotor system.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 border-t">
+          <div class="flex flex-col pt-3">
+            <p class="text-lg font-semibold">Air Hockey</p>
+            <div class="flex flex-col text-sm">
+              <p>Universidad de 'San Andrés'</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Aug. 2021 - Aug. 2022</p>
+            </div>
+            <ul
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+            >
+              <li>
+                Contributed to a pioneering project at the University of San
+                Andres involving the application of Reinforcement Learning (RL)
+                algorithms to enhance performance in the game of Air Hockey.
+              </li>
+              <li>
+                Developed and implemented a heuristic algorithm as a baseline
+                for paddle control, which estimated puck position and velocity
+                to inform real&dash;time gameplay decisions.
+              </li>
+              <li>
+                Designed and constructed a comprehensive simulator to facilitate
+                the training and evaluation of RL agents, enabling efficient
+                testing of different strategies in a controlled environment.
+              </li>
+              <li>
+                Investigated cutting&dash;edge neural network techniques,
+                including the U&dash;Net architecture, for accurate segmentation
+                of the puck from camera images positioned above the air hockey
+                table.
+              </li>
+              <li>
+                Explored and researched potential solutions to tackle challenges
+                arising from variable lighting conditions and automatic white
+                balance interference. Implemented neural network&dash;based
+                vision systems to enhance puck tracking and state estimation,
+                contributing to more resilient performance in the context of Air
+                Hockey gameplay.
+              </li>
+              <li>
+                Evaluated and benchmarked the performance of RL agents and
+                neural network&dash;based segmentation against the heuristic
+                algorithm baseline, utilizing metrics such as win rates and game
+                scores for comprehensive analysis.
+              </li>
+            </ul>
+          </div>
+          <li class="flex flex-col gap-2 border-t">
+            <div class="flex flex-col pt-3">
+              <p class="text-lg font-semibold">Balancio</p>
+              <div class="flex flex-col text-sm">
+                <p>Universidad de 'San Andrés'</p>
+                <p class="font-light">Buenos Aires, Argentina</p>
+                <p class="font-light">Aug. 2021 - Aug. 2022</p>
+              </div>
+              <ul
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              >
+                <li>
+                  Educational project for an ultra&dash;low&dash;cost
+                  self&dash;balancing robot, capable of running a neural network
+                  to maintain balance and being controlled wirelessly. Developed
+                  for educational purposes to teach concepts of RL, ML, AI and
+                  control.
+                </li>
+                <li>
+                  Created using Arduino and PyBullet as the simulation
+                  environment to bridge the gap between simulation and reality
+                  (Sim2Real).
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="flex flex-col gap-2 border-t">
+            <div class="flex flex-col pt-3">
+              <p class="text-lg font-semibold">Monocular Visual SLAM</p>
+              <div class="flex flex-col text-sm">
+                <p>Universidad de 'San Andrés'</p>
+                <p class="font-light">Buenos Aires, Argentina</p>
+                <p class="font-light">Aug. 2021 - Aug. 2022</p>
+              </div>
+              <ul
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              >
+                <li>
+                  Implemented a visual navigation system for simultaneous mobile
+                  robot localization and mapping using EKF and 1&apos;Point
+                  RANSAC in ROS (C++17).
+                </li>
+              </ul>
+            </div>
+          </li>
+        </li>
+      </ul>
+      <section class="mt-4 flex flex-col gap-2">
+        <div class="flex">
+          <div class="text-2xl">Languages</div>
+          <div class="w-full border-b border-slate-950 px-0"></div>
+        </div>
+        <div>
+          <ul class="flex flex-col">
+            <li class="flex flex-col">
+              <span class="font-semibold">Spanish</span>
+              <span class="text-sm">Native</span>
+            </li>
+            <li class="mt-2 flex flex-col border-t pt-2">
+              <span class="font-semibold">English</span>
+              <span class="text-sm">Full Professional Proficiency</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="mt-4 flex flex-col gap-2">
+        <div class="flex">
+          <div class="text-2xl">Publications</div>
+          <div class="w-full border-b border-slate-950 px-0"></div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2">
+            <p class="font-medium">Journals</p>
+            <ul>
+              <li class="flex items-center justify-center gap-6">
+                <span>[J1]</span>
+                <p>
+                  <span class="font-bold">A. J. Gaona, P. D. Arini.</span>
+                  ”Deep Recurrent Learning for Heart Sounds Segmentation based on
+                  Instantaneous Frequency Features”. Revista Elektron, Vol. 4, No.
+                  2, pp 52&dash;57 (2020).
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p class="font-medium">Conferences</p>
+            <ul>
+              <li class="flex items-center justify-center gap-6">
+                <span>[C1]</span>
+                <p>
+                  <span class="font-bold"
+                    >A. J. Gaona, C. D. P, J. I. Giribet, R. Bunge.</span
+                  >
+                  ”Prototyping of a multirotor UAV for precision landing under rotor
+                  failures”. Jornadas Argentinas de Robótica (JAR) XI (2022).
+                </p>
+              </li>
+              <li class="flex items-center justify-center gap-6">
+                <span>[C2]</span>
+                <p>
+                  <span class="font-bold"
+                    >J. I. Giribet, C. D. Pose, A. J. Gaona, R. Bunge, J. I.
+                    González Etchemaite.</span
+                  >
+                  ”Fault Tolerant Solutions for Multirotor Unmanned Aerial Vehicles
+                  in NVIDIA® Jetson™ TX2”. NVIDIA GPU Technology Conference (2022).
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="mt-4">
+        <div class="flex">
+          <div class="text-2xl">Certifications</div>
+          <div class="w-full border-b border-slate-950 px-0"></div>
+        </div>
+        <ul class="my-2 flex flex-col">
+          <li class="flex gap-12">
+            <span>2022</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">DeepLearning.AI,</span>
+              <span
+                >Machine Learning Specialization. Credential ID JHAG9Z5K3A58.</span
+              >
+            </p>
+          </li>
+          <li class="flex gap-12">
+            <span>2022</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">Udacity,</span>
+              <span
+                >Deep Reinforcement Learning Nanodegree. Credential ID XEFCDXKG.</span
+              >
+            </p>
+          </li>
+          <li class="flex gap-12">
+            <span>2020</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">Udacity,</span>
+              <span
+                >Robotics Software Engineer Nanodegree. Credential ID TJ7WMENN.</span
+              >
+            </p>
+          </li>
+          <li class="flex gap-12">
+            <span>2020</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">Udacity,</span>
+              <span>Deep Learning Nanodegree. Credential ID LKMK2E3L.</span>
+            </p>
+          </li>
+          <li class="flex gap-12">
+            <span>2020</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">Udacity,</span>
+              <span>Sensor Fusion Nanodegree. Credential ID FRQGRNDP.</span>
+            </p>
+          </li>
+          <li class="flex gap-12">
+            <span>2020</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">Udacity,</span>
+              <span>Sensor Fusion Nanodegree. Credential ID FRQGRNDP.</span>
+            </p>
+          </li>
+          <li class="flex gap-12">
+            <span>2020</span>
+            <p class="flex gap-1">
+              <span class="font-semibold">Amazon Web Services,</span>
+              <span>
+                AWS Solutions Architect Associate. Credential ID LKMK2E3L.</span
+              >
+            </p>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </main>
 </Layout>
