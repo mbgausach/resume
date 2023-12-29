@@ -1,37 +1,76 @@
 ---
 import Layout from '@layouts/Layout.astro';
+
+import github from '@assets/github.svg';
+import linkedin from '@assets/linkedin.svg';
+import scholar from '@assets/scholar.svg';
+import globe from '@assets/globe-alt.svg';
+import mobile from '@assets/device-phone-mobile.svg';
+import envelope from '@assets/envelope.svg';
 ---
 
 <Layout title="Alvaro > Resume">
   <main
-    class="mx-96 my-20 flex flex-col rounded-lg bg-white p-32 shadow-md shadow-white"
+    class="flex flex-col rounded-lg bg-[#ececec] p-12 shadow-md shadow-white md:mx-32 md:my-20 lg:mx-48 xl:mx-64 2xl:mx-96"
   >
-    <div class="flex flex-col gap-4">
-      <p class="font-m-plus-2 text-center text-6xl font-thin">
-        <span>Alvaro</span> J. Gaona
-      </p>
-      <p class="text-center italic">Buenos Aires, Argentina</p>
-    </div>
-    <div class="my-1 flex self-center text-xs">
-      <span class="border-r border-black px-1">(+54) 911 6797 1081</span>
-      <span class="border-r border-black px-1">alvgaona@gmail.com</span>
-      <span class="border-r border-black px-1">alvgaona.com</span>
-      <span class="border-r border-black px-1">alvgaona</span>
-      <span class="border-r border-black px-1">alvaro-gaona</span>
-      <span class="border-black px-1">Alvaro J. Gaona</span>
-    </div>
-    <section class="mt-4 flex flex-col gap-2">
-      <div class="flex">
-        <div class="text-2xl">Education</div>
-        <div class="w-full border-b border-slate-950 px-0"></div>
+    <div class="flex flex-col gap-2 pl-6">
+      <div class="flex flex-col gap-1">
+        <p class="font-m-plus-2 text-6xl font-thin">
+          <span>Alvaro</span> J. Gaona
+        </p>
+        <p class="italic">Buenos Aires, Argentina</p>
       </div>
-      <ul class="flex flex-col gap-4">
+      <div class="my-1 flex flex-col gap-1 text-xs">
+        <div class="flex items-center gap-1">
+          <img src={mobile.src} width="12" alt="Mobile icon" />
+          <span>(+54) 911 6797&dash;1081</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <img src={envelope.src} width="12" alt="Envelope icon" />
+          <span>alvgaona@gmail.com</span>
+        </div>
+        <a href="https://alvgaona.com">
+          <div class="flex items-center gap-1">
+            <img src={globe.src} width="12" alt="Globe icon" />
+            <span>alvgaona.com</span>
+          </div>
+        </a>
+        <a href="https://github.com/alvgaona">
+          <div class="flex items-center gap-1">
+            <img src={github.src} width="12" height="12" alt="GitHub icon" />
+            <span>alvgaona</span>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/alvaro-gaona">
+          <div class="flex items-center gap-1">
+            <img src={linkedin.src} width="12" alt="LinkedIn icon" />
+            <span>alvaro-gaona</span>
+          </div>
+        </a>
+        <a href="https://scholar.google.com/citations?user=unBAfxAAAAAJ&hl=en">
+          <div class="flex items-center gap-1">
+            <img src={scholar.src} width="12" alt="Google Scholar icon" />
+            <span>Alvaro J. Gaona</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">Education</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4 xl:pr-48">
         <li class="flex flex-col gap-2">
-          <div class="grid grid-cols-3">
+          <div class="flex flex-col">
             <p class="text-lg font-semibold">University of Buenos Aires</p>
-            <p class="col-start-3 text-end text-sm">Buenos Aires, Argentina</p>
-            <p class="text-sm">Graduate in Electrical Engineering</p>
-            <p class="col-start-3 text-end text-sm">Mar. 2013 - Sep. 2019</p>
+            <div class="flex flex-col text-sm">
+              <p>Graduate in Electrical Engineering</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Mar. 2013 - Sep. 2019</p>
+            </div>
             <ul
               class="col-span-2 mt-2 flex list-inside list-disc flex-col gap-2 text-sm"
             >
@@ -47,31 +86,38 @@ import Layout from '@layouts/Layout.astro';
           </div>
         </li>
         <li class="flex flex-col gap-2">
-          <div class="grid grid-cols-3">
+          <div class="flex flex-col">
             <p class="text-lg font-semibold">University of Buenos Aires</p>
-            <p class="col-start-3 text-end text-sm">Buenos Aires, Argentina</p>
-            <p class="text-sm">Graduate in Electrical Engineering</p>
-            <p class="col-start-3 text-end text-sm">Mar. 2013 - Sep. 2019</p>
-            <ul
-              class="col-span-2 mt-2 flex list-inside list-disc flex-col gap-2 text-sm"
-            >
-              <li>
-                <span class="italic"
-                  >”Deep Recurrent Learning for Heart Sounds Segmentation based
-                  on Instantaneous Frequency Features”</span
-                >, Graduate Thesis, 2019. University of Buenos Aires. Grade
-                100/100.
-              </li>
-              <li>GPA: 3.5/4.0</li>
-            </ul>
+            <div class="flex flex-col text-sm">
+              <p>Industrial Engineering (Incomplete)</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Mar. 2010 - Sep. 2013</p>
+            </div>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-col">
+            <p class="text-lg font-semibold">
+              Instituto Social Militar "Dr. Dámaso Centeno"
+            </p>
+            <div class="flex flex-col text-sm">
+              <p>
+                Secondary Education with option in Mathematics and Natural
+                Sciences
+              </p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">Mar. 2003 - Dec. 2009</p>
+            </div>
           </div>
         </li>
       </ul>
     </section>
-    <section class="mt-4 flex flex-col gap-2">
-      <div class="flex">
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
         <div class="text-2xl">Experience</div>
-        <div class="w-full border-b border-slate-950 px-0"></div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col gap-4">
         <li class="flex flex-col gap-2">
@@ -83,7 +129,7 @@ import Layout from '@layouts/Layout.astro';
               <p class="font-light">Aug. 2022 - Present</p>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm xl:pr-48"
             >
               <li class="text-justify">
                 As the lead engineer, I oversee the development and upkeep of
@@ -121,7 +167,7 @@ import Layout from '@layouts/Layout.astro';
                 </p>
               </div>
               <ul
-                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm"
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm xl:pr-48"
               >
                 <li class="text-justify">
                   My responsibilities include educating undergraduate students
@@ -144,7 +190,7 @@ import Layout from '@layouts/Layout.astro';
                 </p>
               </div>
               <ul
-                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm"
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm xl:pr-48"
               >
                 <li class="text-justify">
                   Conducted research on perception algorithms for self‑driving
@@ -179,7 +225,7 @@ import Layout from '@layouts/Layout.astro';
               </div>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Successfully migrated a core 500 GB database from Oracle to
@@ -239,7 +285,7 @@ import Layout from '@layouts/Layout.astro';
               </div>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Played a key role in developing an SDN controller responsible
@@ -285,7 +331,7 @@ import Layout from '@layouts/Layout.astro';
               </div>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Designed circuit boards used in a range of meteorological
@@ -302,10 +348,12 @@ import Layout from '@layouts/Layout.astro';
         </li>
       </ul>
     </section>
-    <section class="mt-4 flex flex-col gap-2">
-      <div class="flex">
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
         <div class="text-2xl">Volunteering</div>
-        <div class="w-full border-b border-slate-950 px-0"></div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col gap-4">
         <li class="flex flex-col text-sm">
@@ -320,125 +368,268 @@ import Layout from '@layouts/Layout.astro';
         </li>
       </ul>
     </section>
-    <section class="mt-4 flex flex-col gap-2">
-      <div class="flex">
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
         <div class="text-2xl">Skills</div>
-        <div class="w-full border-b border-slate-950 px-0"></div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col gap-4">
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Autonomous Systems</span>
-          <div
-            class="grid grid-cols-6 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">Mobile Robotics</span>
-            <span class="rounded-lg bg-slate-700 py-1">Kinematics</span>
-            <span class="rounded-lg bg-slate-700 py-1">Vehicle Dynamics</span>
-            <span class="rounded-lg bg-slate-700 py-1">Sensor Fusion</span>
-            <span class="rounded-lg bg-slate-700 py-1">SLAM</span>
-            <span class="rounded-lg bg-slate-700 py-1">Navigation</span>
-            <span class="rounded-lg bg-slate-700 py-1">ROS/ROS2</span>
-            <span class="rounded-lg bg-slate-700 py-1">NVIDIA Isaac Sim</span>
-            <span class="rounded-lg bg-slate-700 py-1">Unity</span>
-            <span class="rounded-lg bg-slate-700 py-1">PX4</span>
-            <span class="rounded-lg bg-slate-700 py-1">Mavlink</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Mobile Robotics</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Kinematics</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Vehicle Dynamics</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Sensor Fusion</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >SLAM</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Navigation</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              ROS/ROS2
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              NVIDIA Isaac Sim
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              Unity
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >PX4</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              Mavlink
+            </span>
           </div>
         </li>
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Artificial Intelligence</span>
-          <div
-            class="grid grid-cols-5 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">Supervised Learning</span
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Supervised Learning</span
             >
-            <span class="rounded-lg bg-slate-700 py-1"
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
               >Unsupervised Learning</span
             >
-            <span class="rounded-lg bg-slate-700 py-1"
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
               >Reinforcement Learning</span
             >
           </div>
         </li>
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Mathematics</span>
-          <div
-            class="grid grid-cols-5 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">Linear Algebra</span>
-            <span class="rounded-lg bg-slate-700 py-1">Calculus</span>
-            <span class="rounded-lg bg-slate-700 py-1">Linear Systems</span>
-            <span class="rounded-lg bg-slate-700 py-1">Non-linear Systems</span>
-            <span class="rounded-lg bg-slate-700 py-1">Classic Control</span>
-            <span class="rounded-lg bg-slate-700 py-1">Modern Control</span>
-            <span class="rounded-lg bg-slate-700 py-1">Optimal Control</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Linear Algebra
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Calculus</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Linear Systems</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Non-linear Systems</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              Classic Control
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              Modern Control
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+            >
+              Optimal Control
+            </span>
           </div>
         </li>
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Programming Languages</span>
-          <div
-            class="grid grid-cols-7 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">C/C++</span>
-            <span class="rounded-lg bg-slate-700 py-1">C#</span>
-            <span class="rounded-lg bg-slate-700 py-1">Python</span>
-            <span class="rounded-lg bg-slate-700 py-1">Java</span>
-            <span class="rounded-lg bg-slate-700 py-1">TypeScript</span>
-            <span class="rounded-lg bg-slate-700 py-1">Go</span>
-            <span class="rounded-lg bg-slate-700 py-1">MATLAB/Simulink</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >C/C++</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >C#</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Python</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Java</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >TypeScript</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Go</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >MATLAB/Simulink</span
+            >
           </div>
         </li>
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Libraries &amp; Frameworks</span>
-          <div
-            class="grid grid-cols-8 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">OpenCV</span>
-            <span class="rounded-lg bg-slate-700 py-1">PCL</span>
-            <span class="rounded-lg bg-slate-700 py-1">Eigen</span>
-            <span class="rounded-lg bg-slate-700 py-1">PyTorch</span>
-            <span class="rounded-lg bg-slate-700 py-1">Tensorflow</span>
-            <span class="rounded-lg bg-slate-700 py-1">Gstreamer</span>
-            <span class="rounded-lg bg-slate-700 py-1">React</span>
-            <span class="rounded-lg bg-slate-700 py-1">NextJS</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >OpenCV</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >PCL</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Eigen</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >PyTorch</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Tensorflow</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Gstreamer</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >React</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >NextJS</span
+            >
           </div>
         </li>
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Software Engineering</span>
-          <div
-            class="grid grid-cols-5 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">AWS Services</span>
-            <span class="rounded-lg bg-slate-700 py-1"
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >AWS Services</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
               >Google Cloud Platform</span
             >
-            <span class="rounded-lg bg-slate-700 py-1">Azure</span>
-            <span class="rounded-lg bg-slate-700 py-1">Kubernetes</span>
-            <span class="rounded-lg bg-slate-700 py-1">Agile</span>
-            <span class="rounded-lg bg-slate-700 py-1">OOP</span>
-            <span class="rounded-lg bg-slate-700 py-1">Design Patterns</span>
-            <span class="rounded-lg bg-slate-700 py-1">Estimation</span>
-            <span class="rounded-lg bg-slate-700 py-1">Planning</span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Azure</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Kubernetes</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Agile</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >OOP</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Design Patterns</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Estimation</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Planning</span
+            >
           </div>
         </li>
         <li class="flex flex-col gap-2">
           <span class="font-semibold">Other skills</span>
-          <div
-            class="grid grid-cols-7 gap-1 text-center text-sm text-slate-200"
-          >
-            <span class="rounded-lg bg-slate-700 py-1">Teamwork</span>
-            <span class="rounded-lg bg-slate-700 py-1">Ownership</span>
-            <span class="rounded-lg bg-slate-700 py-1">Communication</span>
-            <span class="rounded-lg bg-slate-700 py-1">Leadership</span>
-            <span class="rounded-lg bg-slate-700 py-1">Self-motivated</span>
-            <span class="rounded-lg bg-slate-700 py-1">Public Speaking</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Teamwork</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Ownership</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Communication</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Leadership</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Self-motivated</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-slate-700 px-2"
+              >Public Speaking</span
+            >
           </div>
         </li>
       </ul>
     </section>
-    <section class="mt-4 flex flex-col gap-2">
-      <div class="flex">
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
         <div class="text-2xl">Projects</div>
-        <div class="w-full border-b border-slate-950 px-0"></div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col gap-4">
         <li class="flex flex-col gap-2">
@@ -450,7 +641,7 @@ import Layout from '@layouts/Layout.astro';
               <p class="font-light">Aug. 2021 - Aug. 2022</p>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Designed and delivered a comprehensive deep‑learning workshop
@@ -482,7 +673,7 @@ import Layout from '@layouts/Layout.astro';
               <p class="font-light">Aug. 2021 - Aug. 2022</p>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Engaged in the integration of a 2017 Ford Fusion, with
@@ -527,7 +718,7 @@ import Layout from '@layouts/Layout.astro';
               <p class="font-light">Aug. 2021 - Aug. 2022</p>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Led the conceptualization and creation of a sophisticated
@@ -575,7 +766,7 @@ import Layout from '@layouts/Layout.astro';
               <p class="font-light">Aug. 2021 - Aug. 2022</p>
             </div>
             <ul
-              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+              class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
             >
               <li>
                 Contributed to a pioneering project at the University of San
@@ -623,7 +814,7 @@ import Layout from '@layouts/Layout.astro';
                 <p class="font-light">Aug. 2021 - Aug. 2022</p>
               </div>
               <ul
-                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
               >
                 <li>
                   Educational project for an ultra&dash;low&dash;cost
@@ -649,7 +840,7 @@ import Layout from '@layouts/Layout.astro';
                 <p class="font-light">Aug. 2021 - Aug. 2022</p>
               </div>
               <ul
-                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm"
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-justify text-sm xl:pr-48"
               >
                 <li>
                   Implemented a visual navigation system for simultaneous mobile
@@ -661,137 +852,143 @@ import Layout from '@layouts/Layout.astro';
           </li>
         </li>
       </ul>
-      <section class="mt-4 flex flex-col gap-2">
-        <div class="flex">
-          <div class="text-2xl">Languages</div>
-          <div class="w-full border-b border-slate-950 px-0"></div>
-        </div>
-        <div>
-          <ul class="flex flex-col">
-            <li class="flex flex-col">
-              <span class="font-semibold">Spanish</span>
-              <span class="text-sm">Native</span>
-            </li>
-            <li class="mt-2 flex flex-col border-t pt-2">
-              <span class="font-semibold">English</span>
-              <span class="text-sm">Full Professional Proficiency</span>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">Languages</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <div>
+        <ul class="flex flex-col">
+          <li class="flex flex-col">
+            <span class="font-semibold">Spanish</span>
+            <span class="text-sm">Native</span>
+          </li>
+          <li class="mt-2 flex flex-col border-t pt-2">
+            <span class="font-semibold">English</span>
+            <span class="text-sm">Full Professional Proficiency</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">Publications</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <div class="flex flex-col gap-2 xl:pr-48">
+        <div class="flex flex-col gap-2">
+          <p class="font-medium">Journals</p>
+          <ul class="text-sm">
+            <li class="flex items-center justify-center gap-6">
+              <span>[J1]</span>
+              <p>
+                <span class="font-bold">A. J. Gaona, P. D. Arini.</span>
+                ”Deep Recurrent Learning for Heart Sounds Segmentation based on Instantaneous
+                Frequency Features”. Revista Elektron, Vol. 4, No. 2, pp 52&dash;57
+                (2020).
+              </p>
             </li>
           </ul>
         </div>
-      </section>
-      <section class="mt-4 flex flex-col gap-2">
-        <div class="flex">
-          <div class="text-2xl">Publications</div>
-          <div class="w-full border-b border-slate-950 px-0"></div>
-        </div>
         <div class="flex flex-col gap-2">
-          <div class="flex flex-col gap-2">
-            <p class="font-medium">Journals</p>
-            <ul>
-              <li class="flex items-center justify-center gap-6">
-                <span>[J1]</span>
-                <p>
-                  <span class="font-bold">A. J. Gaona, P. D. Arini.</span>
-                  ”Deep Recurrent Learning for Heart Sounds Segmentation based on
-                  Instantaneous Frequency Features”. Revista Elektron, Vol. 4, No.
-                  2, pp 52&dash;57 (2020).
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="font-medium">Conferences</p>
-            <ul>
-              <li class="flex items-center justify-center gap-6">
-                <span>[C1]</span>
-                <p>
-                  <span class="font-bold"
-                    >A. J. Gaona, C. D. P, J. I. Giribet, R. Bunge.</span
-                  >
-                  ”Prototyping of a multirotor UAV for precision landing under rotor
-                  failures”. Jornadas Argentinas de Robótica (JAR) XI (2022).
-                </p>
-              </li>
-              <li class="flex items-center justify-center gap-6">
-                <span>[C2]</span>
-                <p>
-                  <span class="font-bold"
-                    >J. I. Giribet, C. D. Pose, A. J. Gaona, R. Bunge, J. I.
-                    González Etchemaite.</span
-                  >
-                  ”Fault Tolerant Solutions for Multirotor Unmanned Aerial Vehicles
-                  in NVIDIA® Jetson™ TX2”. NVIDIA GPU Technology Conference (2022).
-                </p>
-              </li>
-            </ul>
-          </div>
+          <p class="font-medium">Conferences</p>
+          <ul class="text-sm">
+            <li class="flex items-center justify-center gap-6">
+              <span>[C1]</span>
+              <p>
+                <span class="font-bold"
+                  >A. J. Gaona, C. D. P, J. I. Giribet, R. Bunge.</span
+                >
+                ”Prototyping of a multirotor UAV for precision landing under rotor
+                failures”. Jornadas Argentinas de Robótica (JAR) XI (2022).
+              </p>
+            </li>
+            <li class="flex items-center justify-center gap-6">
+              <span>[C2]</span>
+              <p>
+                <span class="font-bold"
+                  >J. I. Giribet, C. D. Pose, A. J. Gaona, R. Bunge, J. I.
+                  González Etchemaite.</span
+                >
+                ”Fault Tolerant Solutions for Multirotor Unmanned Aerial Vehicles
+                in NVIDIA® Jetson™ TX2”. NVIDIA GPU Technology Conference (2022).
+              </p>
+            </li>
+          </ul>
         </div>
-      </section>
-      <section class="mt-4">
-        <div class="flex">
-          <div class="text-2xl">Certifications</div>
-          <div class="w-full border-b border-slate-950 px-0"></div>
-        </div>
-        <ul class="my-2 flex flex-col">
-          <li class="flex gap-12">
-            <span>2022</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">DeepLearning.AI,</span>
-              <span
-                >Machine Learning Specialization. Credential ID JHAG9Z5K3A58.</span
-              >
-            </p>
-          </li>
-          <li class="flex gap-12">
-            <span>2022</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">Udacity,</span>
-              <span
-                >Deep Reinforcement Learning Nanodegree. Credential ID XEFCDXKG.</span
-              >
-            </p>
-          </li>
-          <li class="flex gap-12">
-            <span>2020</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">Udacity,</span>
-              <span
-                >Robotics Software Engineer Nanodegree. Credential ID TJ7WMENN.</span
-              >
-            </p>
-          </li>
-          <li class="flex gap-12">
-            <span>2020</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">Udacity,</span>
-              <span>Deep Learning Nanodegree. Credential ID LKMK2E3L.</span>
-            </p>
-          </li>
-          <li class="flex gap-12">
-            <span>2020</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">Udacity,</span>
-              <span>Sensor Fusion Nanodegree. Credential ID FRQGRNDP.</span>
-            </p>
-          </li>
-          <li class="flex gap-12">
-            <span>2020</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">Udacity,</span>
-              <span>Sensor Fusion Nanodegree. Credential ID FRQGRNDP.</span>
-            </p>
-          </li>
-          <li class="flex gap-12">
-            <span>2020</span>
-            <p class="flex gap-1">
-              <span class="font-semibold">Amazon Web Services,</span>
-              <span>
-                AWS Solutions Architect Associate. Credential ID LKMK2E3L.</span
-              >
-            </p>
-          </li>
-        </ul>
-      </section>
+      </div>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">Certifications</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <ul class="my-2 flex flex-col sm:text-sm">
+        <li class="flex gap-12">
+          <span>2022</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">DeepLearning.AI,</span>
+            <span
+              >Machine Learning Specialization. Credential ID JHAG9Z5K3A58.</span
+            >
+          </p>
+        </li>
+        <li class="flex gap-12">
+          <span>2022</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">Udacity,</span>
+            <span
+              >Deep Reinforcement Learning Nanodegree. Credential ID XEFCDXKG.</span
+            >
+          </p>
+        </li>
+        <li class="flex gap-12">
+          <span>2020</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">Udacity,</span>
+            <span
+              >Robotics Software Engineer Nanodegree. Credential ID TJ7WMENN.</span
+            >
+          </p>
+        </li>
+        <li class="flex gap-12">
+          <span>2020</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">Udacity,</span>
+            <span>Deep Learning Nanodegree. Credential ID LKMK2E3L.</span>
+          </p>
+        </li>
+        <li class="flex gap-12">
+          <span>2020</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">Udacity,</span>
+            <span>Sensor Fusion Nanodegree. Credential ID FRQGRNDP.</span>
+          </p>
+        </li>
+        <li class="flex gap-12">
+          <span>2020</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">Udacity,</span>
+            <span>Sensor Fusion Nanodegree. Credential ID FRQGRNDP.</span>
+          </p>
+        </li>
+        <li class="flex gap-12">
+          <span>2020</span>
+          <p class="flex gap-1">
+            <span class="font-semibold">Amazon Web Services,</span>
+            <span>
+              AWS Solutions Architect Associate. Credential ID LKMK2E3L.</span
+            >
+          </p>
+        </li>
+      </ul>
     </section>
   </main>
 </Layout>
