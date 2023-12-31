@@ -1,6 +1,8 @@
 ---
 import '@styles/globals.css';
 import '@fontsource-variable/m-plus-2';
+// Supports weights 100-900
+import '@fontsource-variable/inter';
 
 interface Props {
   title: string;
@@ -48,7 +50,6 @@ const { title } = Astro.props;
 
     html,
     body {
-      font-family: Arial, Helvetica, sans-serif;
       background: #fff;
     }
   }
