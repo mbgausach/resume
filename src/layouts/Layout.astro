@@ -32,7 +32,24 @@ const { title } = Astro.props;
 
   html,
   body {
-    font-family: system-ui, sans-serif;
+    font-family: var(--system-ui);
     background: #0d0d0e;
+  }
+
+  @page {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+
+    html,
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+    }
   }
 </style>
