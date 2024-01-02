@@ -13,6 +13,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        'dark-void': '#151419',
+        'bright-gray': '#ececec',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
