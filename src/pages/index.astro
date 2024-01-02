@@ -112,7 +112,7 @@ import coder from '@assets/coder-logo.jpeg';
           class="page-break-always flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
         >
           <div class="flex gap-2">
-            <div>
+            <div class="flex flex-col">
               <img class="h-10 max-w-none sm:h-12" src={compass.src} />
             </div>
             <div class="flex flex-col">
@@ -120,82 +120,94 @@ import coder from '@assets/coder-logo.jpeg';
                 Compass Group Argentina
               </p>
               <p class="mr-auto text-sm">4 yrs 4 mos</p>
-              <div class="page-break mt-2 flex flex-col text-sm">
-                <p class="text-lg font-semibold">Marketing Analyst</p>
-                <p class="font-light">Buenos Aires, Argentina</p>
-                <div class="flex gap-1 sm:gap-2">
-                  <p class="font-light">Sep. 2022 - Present</p> &bullet; <p>
-                    1 yr 5 mos
-                  </p>
-                </div>
-                <ul
-                  class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
-                >
-                  <li>
-                    Implementation and analysis of satisfaction surveys to
-                    improve the customer experience.
-                  </li>
-                  <li class="text-justify">
-                    Responsible for the area's billing, ensuring the accuracy
-                    and compliance of financial processes.
-                  </li>
-                  <li>
-                    Effective coordination with suppliers to ensure quality and
-                    efficiency in the supply chain.
-                  </li>
-                  <li>
-                    Creation and design of graphic pieces, maintaining
-                    consistency with the brand's visual identity.
-                  </li>
-                  <li>
-                    Strategic planning, coordination, and execution of the
-                    social media agenda, including content generation in
-                    collaboration with external agencies.
-                  </li>
-                  <li>
-                    Development, management, and positioning of the brand's
-                    presence in various dining areas, ensuring a consistent and
-                    positive representation.
-                  </li>
-                  <li>
-                    Active participation in operational assistance, contributing
-                    to the efficient operation and continuous improvement of
-                    processes.
-                  </li>
-                </ul>
-              </div>
-              <div class="mt-2 flex flex-col text-sm">
-                <p class="text-lg font-semibold">Food Service Manager</p>
-                <p class="font-light">Buenos Aires, Argentina</p>
-                <div class="flex gap-1 sm:gap-2">
-                  <p class="font-light">Nov. 2019 - Sep. 2022</p> &bullet; <p>
-                    2 yrs 11 mos
-                  </p>
-                </div>
-                <ul
-                  class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
-                >
-                  <li>
-                    Prepare over 1,000 patient meals daily and authorized
-                    personnel meals while ensuring proper nutritional guidelines
-                    and dietary restrictions are met.
-                  </li>
-                  <li>
-                    Monitor food service quality to achieve a 99% satisfaction
-                    rate by implementing consistent quality control measures.
-                  </li>
-                  <li>
-                    Lead a team of over 60 members, fostering collaboration and
-                    facilitating ongoing training, resulting in a 15% reduction
-                    in production errors.
-                  </li>
-                  <li>
-                    Implement raw material stock verification and control
-                    systems, reducing food waste by 20% and optimizing
-                    production efficiency.
-                  </li>
-                </ul>
-              </div>
+              <ul>
+                <li class="page-break relative mt-2 flex flex-col text-sm">
+                  <span
+                    class="absolute left-[calc(-2.2rem-6.5px/2)] top-5 block h-2 w-2 rounded-lg bg-gray-400"
+                  ></span>
+                  <div
+                    class="before:absolute before:left-[calc(-2.2rem-1px/2)] before:top-[calc(calc(1.2rem+.8rem)+.6rem)] before:h-[calc(100%-(1.8rem))] before:w-[2px] before:bg-gray-300 before:content-['']"
+                  >
+                    <p class="text-lg font-semibold">Marketing Analyst</p>
+                    <p class="font-light">Buenos Aires, Argentina</p>
+                    <div class="flex gap-1 sm:gap-2">
+                      <p class="font-light">Sep. 2022 - Present</p> &bullet; <p>
+                        1 yr 5 mos
+                      </p>
+                    </div>
+                    <ul
+                      class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
+                    >
+                      <li>
+                        Implementation and analysis of satisfaction surveys to
+                        improve the customer experience.
+                      </li>
+                      <li class="text-justify">
+                        Responsible for the area's billing, ensuring the
+                        accuracy and compliance of financial processes.
+                      </li>
+                      <li>
+                        Effective coordination with suppliers to ensure quality
+                        and efficiency in the supply chain.
+                      </li>
+                      <li>
+                        Creation and design of graphic pieces, maintaining
+                        consistency with the brand's visual identity.
+                      </li>
+                      <li>
+                        Strategic planning, coordination, and execution of the
+                        social media agenda, including content generation in
+                        collaboration with external agencies.
+                      </li>
+                      <li>
+                        Development, management, and positioning of the brand's
+                        presence in various dining areas, ensuring a consistent
+                        and positive representation.
+                      </li>
+                      <li>
+                        Active participation in operational assistance,
+                        contributing to the efficient operation and continuous
+                        improvement of processes.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="relative mt-2 flex flex-col text-sm">
+                  <span
+                    class="absolute left-[calc(-2.2rem-6.5px/2)] top-5 block h-2 w-2 rounded-lg bg-gray-400"
+                  ></span>
+                  <p class="text-lg font-semibold">Food Service Manager</p>
+                  <p class="font-light">Buenos Aires, Argentina</p>
+                  <div class="flex gap-1 sm:gap-2">
+                    <p class="font-light">Nov. 2019 - Sep. 2022</p> &bullet; <p>
+                      2 yrs 11 mos
+                    </p>
+                  </div>
+                  <ul
+                    class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
+                  >
+                    <li>
+                      Prepare over 1,000 patient meals daily and authorized
+                      personnel meals while ensuring proper nutritional
+                      guidelines and dietary restrictions are met.
+                    </li>
+                    <li>
+                      Monitor food service quality to achieve a 99% satisfaction
+                      rate by implementing consistent quality control measures.
+                    </li>
+                    <li>
+                      Lead a team of over 60 members, fostering collaboration
+                      and facilitating ongoing training, resulting in a 15%
+                      reduction in production errors.
+                    </li>
+                    <li>
+                      Implement raw material stock verification and control
+                      systems, reducing food waste by 20% and optimizing
+                      production efficiency.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </li>
