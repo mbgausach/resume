@@ -1,6 +1,6 @@
-# Alvaro's Resume
+# Bel's Resume
 
-[https://resume.alvgaona.com/](https://resume.alvgaona.com/)
+[https://resume.mbgaus.design/](https://resume.mbgaus.design/)
 
 ## Stack
 
@@ -9,4 +9,4 @@
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT License](LICENSE)
