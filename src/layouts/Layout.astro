@@ -1,15 +1,18 @@
 ---
-import '@styles/globals.css';
+import { getLangFromUrl } from '../i18n/utils';
+import '@/styles/globals.css';
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -49,3 +52,4 @@ const { title } = Astro.props;
     }
   }
 </style>
+@/i18n/utils @i18n/utils
