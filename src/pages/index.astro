@@ -13,55 +13,24 @@ import facebook from '@/assets/meta-logo.jpeg';
 import gcba from '@/assets/gcba-logo.jpeg';
 import coder from '@/assets/coder-logo.jpeg';
 
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 
-import { Button } from '@/components/ui/button';
-
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = useTranslations('en');
 ---
 
 <Layout title="Bel > Resume">
   <main
-    class="flex flex-col gap-6 md:mx-32 md:my-14 lg:mx-48 xl:mx-64 2xl:mx-96"
+    class="flex flex-col gap-6 print:m-0 md:mx-32 md:my-14 lg:mx-48 xl:mx-64 2xl:mx-96"
   >
-    <div>
-      <Button>Click me</Button>
-    </div>
-    <Select>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select a fruit" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
     <div
-      class="flex flex-col bg-bright-gray p-12 shadow-md shadow-white print:bg-white print:p-0"
+      class="flex flex-col rounded-lg bg-bright-gray p-12 shadow-md shadow-white print:rounded-none print:bg-white print:p-0 print:shadow-none"
     >
       <div class="flex justify-between pl-6 print:pl-0">
         <div class="flex flex-col gap-2">
           <div class="flex flex-col gap-1">
             <span class="text-6xl font-thin">María Belén Gausachs</span>
           </div>
-          <div class="my-1 flex flex-col gap-1 text-xs">
+          <div class="text-md my-1 flex flex-col gap-1">
             <div class="flex items-center gap-1">
               <img src={pin.src} width="12" alt="Pin icon" />
               <p>Buenos Aires, Argentina</p>
@@ -94,7 +63,11 @@ const t = useTranslations(lang);
             </a>
           </div>
         </div>
-        <img class="mr-14 h-48 rounded-full" src={profile.src} alt="Avatar" />
+        <img
+          class="mr-14 h-48 rounded-full print:h-52"
+          src={profile.src}
+          alt="Avatar"
+        />
       </div>
       <section
         class="page-break-always mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
@@ -103,7 +76,7 @@ const t = useTranslations(lang);
           <div class="text-2xl">{t('education.title')}</div>
           <div class="w-full border-b border-slate-900 px-0"></div>
         </div>
-        <ul class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-1">
           <li class="flex flex-col gap-2">
             <div class="flex flex-col">
               <p class="text-lg font-semibold">
@@ -117,6 +90,11 @@ const t = useTranslations(lang);
                     t('education.marketing.end-date')
                   }
                 </p>
+                <ul class="mx-2 list-inside list-disc p-1">
+                  <li>
+                    {t('education.marketing.comment')}
+                  </li>
+                </ul>
               </div>
             </div>
           </li>
@@ -131,6 +109,14 @@ const t = useTranslations(lang);
                     t('education.strategic-mkt.end-date')
                   }
                 </p>
+                <ul class="mx-2 list-inside list-disc p-1">
+                  <li>
+                    <span class="italic"
+                      >&quot;{t('education.strategic-mkt.thesis')}&quot;</span
+                    >
+                  </li>
+                  <li>{t('education.strategic-mkt.grade')}</li>
+                </ul>
               </div>
             </div>
           </li>
@@ -141,10 +127,18 @@ const t = useTranslations(lang);
                 <p>{t('education.nutrition.degree')}</p>
                 <p class="font-light">Buenos Aires, Argentina</p>
                 <p class="font-light">
-                  {t('education.marketing.start-date')} - {
-                    t('education.marketing.end-date')
+                  {t('education.nutrition.start-date')} - {
+                    t('education.nutrition.end-date')
                   }
                 </p>
+                <ul class="mx-2 list-inside list-disc p-1">
+                  <li>
+                    <span class="italic"
+                      >&quot;{t('education.nutrition.thesis')}&quot;</span
+                    >
+                  </li>
+                  <li>{t('education.nutrition.grade')}</li>
+                </ul>
               </div>
             </div>
           </li>
@@ -178,48 +172,24 @@ const t = useTranslations(lang);
                     <div
                       class="before:absolute before:left-[calc(-2.2rem-1px/2)] before:top-[calc(calc(1.2rem+.8rem)+.1rem)] before:h-[calc(100%-(1.8rem))] before:w-[2px] before:bg-gray-300 before:content-['']"
                     >
-                      <p class="text-lg font-semibold">Marketing Analyst</p>
+                      <p class="text-lg font-semibold">
+                        {t('experience.compass.analyst.role')}
+                      </p>
                       <p class="font-light">Buenos Aires, Argentina</p>
                       <div class="flex gap-1 sm:gap-2">
                         <p class="font-light">Sep. 2022 - Present</p> &bullet; <p
                         >
-                          1 yr 5 mos
+                          {t('experience.compass.analyst.years')}
                         </p>
                       </div>
                       <ul
                         class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                       >
-                        <li>
-                          Implementation and analysis of satisfaction surveys to
-                          improve the customer experience.
-                        </li>
-                        <li class="text-justify">
-                          Responsible for the area's billing, ensuring the
-                          accuracy and compliance of financial processes.
-                        </li>
-                        <li>
-                          Effective coordination with suppliers to ensure
-                          quality and efficiency in the supply chain.
-                        </li>
-                        <li>
-                          Creation and design of graphic pieces, maintaining
-                          consistency with the brand's visual identity.
-                        </li>
-                        <li>
-                          Strategic planning, coordination, and execution of the
-                          social media agenda, including content generation in
-                          collaboration with external agencies.
-                        </li>
-                        <li>
-                          Development, management, and positioning of the
-                          brand's presence in various dining areas, ensuring a
-                          consistent and positive representation.
-                        </li>
-                        <li>
-                          Active participation in operational assistance,
-                          contributing to the efficient operation and continuous
-                          improvement of processes.
-                        </li>
+                        {
+                          t('experience.compass.analyst').map((item) => (
+                            <li>{item}</li>
+                          ))
+                        }
                       </ul>
                     </div>
                   </li>
@@ -227,37 +197,24 @@ const t = useTranslations(lang);
                     <span
                       class="absolute left-[calc(-2.2rem-6.5px/2)] top-3 block h-2 w-2 rounded-lg bg-gray-400"
                     ></span>
-                    <p class="text-lg font-semibold">Food Service Manager</p>
+                    <p class="text-lg font-semibold">
+                      {t('experience.compass.manager.role')}
+                    </p>
                     <p class="font-light">Buenos Aires, Argentina</p>
                     <div class="flex gap-1 sm:gap-2">
                       <p class="font-light">Nov. 2019 - Sep. 2022</p> &bullet; <p
                       >
-                        2 yrs 11 mos
+                        {t('experience.compass.manager.years')}
                       </p>
                     </div>
                     <ul
                       class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                     >
-                      <li>
-                        Prepare over 1,000 patient meals daily and authorized
-                        personnel meals while ensuring proper nutritional
-                        guidelines and dietary restrictions are met.
-                      </li>
-                      <li>
-                        Monitor food service quality to achieve a 99%
-                        satisfaction rate by implementing consistent quality
-                        control measures.
-                      </li>
-                      <li>
-                        Lead a team of over 60 members, fostering collaboration
-                        and facilitating ongoing training, resulting in a 15%
-                        reduction in production errors.
-                      </li>
-                      <li>
-                        Implement raw material stock verification and control
-                        systems, reducing food waste by 20% and optimizing
-                        production efficiency.
-                      </li>
+                      {
+                        t('experience.compass.manager').map((item) => (
+                          <li>{item}</li>
+                        ))
+                      }
                     </ul>
                   </li>
                 </ul>
@@ -272,35 +229,27 @@ const t = useTranslations(lang);
                 <img class="h-10 max-w-none sm:h-12" src={sodexo.src} />
               </div>
               <div class="flex flex-col">
-                <p class="text-lg font-semibold">Clinical Nutrition Manager</p>
+                <p class="text-lg font-semibold">
+                  {t('experience.sodexo.manager.role')}
+                </p>
                 <div class="flex flex-col text-sm">
                   <p>Sodexo</p>
                   <p class="font-light">Buenos Aires, Argentina</p>
                   <div class="flex gap-1 sm:gap-2">
-                    <p class="font-light">Dic. 2018 - Nov. 2019</p>
+                    <p class="font-light">
+                      {t('experience.sodexo.manager.from_to')}
+                    </p>
                     &bullet;
-                    <p>1 yr</p>
+                    {t('experience.sodexo.manager.years')}
                   </div>
                   <ul
                     class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                   >
-                    <li>
-                      Ensured optimal nutrition for hospitalized patients by
-                      creating personalized meal plans tailored to individual
-                      needs and restrictions.
-                    </li>
-                    <li>
-                      Collaborated closely with patients to understand their
-                      dietary preferences and medical conditions.
-                    </li>
-                    <li>
-                      Implemented strict dietetic practices to guarantee food
-                      safety and compliance with regulations.
-                    </li>
-                    <li>
-                      Championed continuous improvement by monitoring patient
-                      satisfaction and food service efficiency.
-                    </li>
+                    {
+                      t('experience.sodexo.manager').map((item) => (
+                        <li>{item}</li>
+                      ))
+                    }
                   </ul>
                 </div>
               </div>
@@ -313,28 +262,19 @@ const t = useTranslations(lang);
               </div>
               <div class="mr-auto flex flex-col text-sm">
                 <p class="text-lg font-semibold">
-                  Lecturer in "Home Companion for Elder Adults"
+                  {t('experience.amia.lecturer.role')}
                 </p>
                 <p>AMIA</p>
                 <p class="font-light">Buenos Aires, Argentina</p>
                 <div class="flex gap-1 sm:gap-2">
                   <p class="font-light">Oct. 2018 - Oct. 2019</p>
                   &bullet;
-                  <p>1 yrs 1 mos</p>
+                  {t('experience.amia.lecturer.years')}
                 </div>
                 <ul
                   class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                 >
-                  <li>
-                    Designed and presented the specialized module on
-                    &quot;Nutrition in Old Age&quot; as part of the
-                    &quot;Geriatric Care Assistan&quot; course organized by the
-                    AMIA.
-                  </li>
-                  <li>
-                    Trained over 60 students in the fundamentals of nutrition in
-                    old age.
-                  </li>
+                  {t('experience.amia.lecturer').map((item) => <li>{item}</li>)}
                 </ul>
               </div>
             </div>
@@ -345,7 +285,7 @@ const t = useTranslations(lang);
         class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
       >
         <div class="flex flex-col">
-          <div class="text-2xl">Skills</div>
+          <div class="text-2xl">{t('skills.title')}</div>
           <div class="w-full border-b border-slate-900 px-0"></div>
         </div>
         <ul class="flex flex-col gap-4">
@@ -450,7 +390,7 @@ const t = useTranslations(lang);
             </div>
           </li>
           <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">Design</span>
+            <span class="font-semibold">{t('skills.design.title')}</span>
             <div
               class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
             >
@@ -493,7 +433,7 @@ const t = useTranslations(lang);
             </div>
           </li>
           <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">Data Analysis</span>
+            <span class="font-semibold">{t('skills.data-analysis.title')}</span>
             <div
               class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
             >
@@ -581,7 +521,7 @@ const t = useTranslations(lang);
             </div>
           </li>
           <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">Other skills</span>
+            <span class="font-semibold">{t('skills.other.title')}</span>
             <div
               class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
             >
@@ -649,7 +589,7 @@ const t = useTranslations(lang);
         class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
       >
         <div class="flex flex-col">
-          <div class="text-2xl">Languages</div>
+          <div class="text-2xl">{t('languages.title')}</div>
           <div class="w-full border-b border-slate-900 px-0"></div>
         </div>
         <div>
@@ -657,12 +597,12 @@ const t = useTranslations(lang);
             <li
               class="flex flex-col border-b border-b-gray-300 pb-2 print:border-0"
             >
-              <span class="font-semibold">Spanish</span>
-              <span class="text-sm">Native</span>
+              <span class="font-semibold">{t('languages.spanish')}</span>
+              <span class="text-sm">{t('languages.native')}</span>
             </li>
             <li class="mt-2 flex flex-col">
-              <span class="font-semibold">English</span>
-              <span class="text-sm">Full Professional Proficiency</span>
+              <span class="font-semibold">{t('languages.english')}</span>
+              <span class="text-sm">{t('languages.proficient')}</span>
             </li>
           </ul>
         </div>
@@ -671,7 +611,7 @@ const t = useTranslations(lang);
         class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
       >
         <div class="flex flex-col">
-          <div class="text-2xl">Certifications</div>
+          <div class="text-2xl">{t('certifications.title')}</div>
           <div class="w-full border-b border-slate-900 px-0"></div>
         </div>
         <ul class="my-2 grid grid-cols-2 text-xs sm:text-sm">
@@ -685,7 +625,7 @@ const t = useTranslations(lang);
                 <img class="h-4 max-w-none sm:h-5" src={coder.src} />
                 <span>Coderhouse</span>
               </div>
-              <span>Issued May 2023</span>
+              <span>{t('certifications.coderhouse.issued')}</span>
             </li>
           </a>
           <a
@@ -701,7 +641,7 @@ const t = useTranslations(lang);
                   >Meta</span
                 >
               </div>
-              <span>Issued Jun 2022</span>
+              <span>{t('certifications.meta.issued')}</span>
             </li>
           </a>
           <a
@@ -713,10 +653,10 @@ const t = useTranslations(lang);
               >
               <div class="flex gap-1">
                 <img class="h-4 max-w-none sm:h-5" src={gcba.src} /><span
-                  >Buenos Aires City Government</span
+                  >GCBA</span
                 >
               </div>
-              <span>Issued Sep 2021</span>
+              <span>{t('certifications.gcba.issued')}</span>
             </li>
           </a>
         </ul>
@@ -724,4 +664,3 @@ const t = useTranslations(lang);
     </div>
   </main>
 </Layout>
-../i18n/utils @i18n/utils
