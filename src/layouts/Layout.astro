@@ -1,13 +1,19 @@
 ---
+import '@/styles/globals.css';
+import LanguageSelector from '@/components/language-selector';
+import { getLangFromUrl } from '@/i18n/utils';
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -17,33 +23,40 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-dark-void">
-    <slot />
+    <main
+      class="flex flex-col gap-6 print:m-0 md:mx-32 md:my-14 lg:mx-48 xl:mx-64 2xl:mx-96"
+    >
+      <div class="flex items-center justify-end gap-2 print:hidden">
+        <LanguageSelector client:load />
+      </div>
+      <slot />
+    </main>
   </body>
-</html>
-<style is:global>
-  :root {
-    --system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  }
-
-  html,
-  body {
-    font-family: var(--system-ui);
-  }
-
-  @media print {
-    .page-break {
-      page-break-after: always;
-    }
-
-    @page {
-      margin-top: 1cm;
-      margin-bottom: 1cm;
+  <style is:global>
+    :root {
+      --system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     }
 
     html,
     body {
-      background: #fff;
+      font-family: var(--system-ui);
     }
-  }
-</style>
+
+    @media print {
+      .page-break {
+        page-break-after: always;
+      }
+
+      @page {
+        margin-top: 1cm;
+        margin-bottom: 1cm;
+      }
+
+      html,
+      body {
+        background: #fff;
+      }
+    }
+  </style>
+</html>

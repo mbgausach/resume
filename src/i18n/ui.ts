@@ -35,7 +35,7 @@ export const ui = {
       "Development, management, and positioning of the brand's presence in various dining areas, ensuring a consistent and positive representation.",
       'Active participation in operational assistance, contributing to the efficient operation and continuous improvement of processes.',
     ],
-    'experience.compass.manager.role': 'Gerente de Servicio',
+    'experience.compass.manager.role': 'Food Service Manager',
     'experience.compass.manager.years': '2 yrs 11 mos',
     'experience.compass.manager': [
       'Manage a team in charge of preparing +1000 patient and authorized personnel daily meals while ensuring proper nutritional guidelines and dietary restrictions are met.',

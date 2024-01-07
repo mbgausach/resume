@@ -13,656 +13,644 @@ import facebook from '@/assets/meta-logo.jpeg';
 import gcba from '@/assets/gcba-logo.jpeg';
 import coder from '@/assets/coder-logo.jpeg';
 
-import { useTranslations } from '../i18n/utils';
+import { useTranslations } from '@/i18n/utils';
 
-const lang = "es";
-
-const pageBreak = lang == "en" ? "page-break" : ""
-
-const t = useTranslations(lang);
+const lang = Astro.url.searchParams.get('locale');
+const pageBreak = lang == 'en' ? 'page-break' : '';
+const t = useTranslations(lang ? lang : 'en');
 ---
 
 <Layout title="Bel > Resume">
-  <main
-    class="flex flex-col gap-6 print:m-0 md:mx-32 md:my-14 lg:mx-48 xl:mx-64 2xl:mx-96"
+  <div
+    class="flex flex-col rounded-lg bg-bright-gray p-12 shadow-md shadow-white print:rounded-none print:bg-white print:p-0 print:shadow-none"
   >
-    <div
-      class="flex flex-col rounded-lg bg-bright-gray p-12 shadow-md shadow-white print:rounded-none print:bg-white print:p-0 print:shadow-none"
-    >
-      <div class="flex justify-between pl-6 print:pl-0">
-        <div class="flex flex-col gap-2">
-          <div class="flex flex-col gap-1">
-            <span class="text-6xl font-thin">María Belén Gausachs</span>
-          </div>
-          <div class="text-md my-1 flex flex-col gap-1">
-            <div class="flex items-center gap-1">
-              <img src={pin.src} width="12" alt="Pin icon" />
-              <p>Buenos Aires, Argentina</p>
-            </div>
-            <div class="flex items-center gap-1">
-              <img src={mobile.src} width="12" alt="Mobile icon" />
-              <span>(+54) 911 5135&dash;8396</span>
-            </div>
-            <div class="flex items-center gap-1">
-              <img src={envelope.src} width="12" alt="Envelope icon" />
-              <span>mbgausachs@gmail.com</span>
-            </div>
-            <!-- <a target="_blank" href="https://mbgaus.design">
-              <div class="flex items-center gap-1">
-                <img src={globe.src} width="12" alt="Globe icon" />
-                <span>mbgaus.design</span>
-              </div>
-            </a> -->
-            <!-- <a target="_blank" href="https://github.com/mbgausach">
-              <div class="flex items-center gap-1">
-                <img src={github.src} width="12" height="12" alt="GitHub icon" />
-                <span>mbgausach</span>
-              </div>
-            </a> -->
-            <a target="_blank" href="https://linkedin.com/in/mbgausachs">
-              <div class="flex items-center gap-1">
-                <img class="h-3" src={linkedin.src} alt="LinkedIn icon" />
-                <span>mbgausachs</span>
-              </div>
-            </a>
-          </div>
+    <div class="flex justify-between pl-6 print:pl-0">
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-1">
+          <span class="text-6xl font-thin">María Belén Gausachs</span>
         </div>
-        <img
-          class="mr-14 h-48 rounded-full print:h-52"
-          src={profile.src}
-          alt="Avatar"
-        />
+        <div class="text-md my-1 flex flex-col gap-1">
+          <div class="flex items-center gap-1">
+            <img src={pin.src} width="12" alt="Pin icon" />
+            <p>Buenos Aires, Argentina</p>
+          </div>
+          <div class="flex items-center gap-1">
+            <img src={mobile.src} width="12" alt="Mobile icon" />
+            <span>(+54) 911 5135&dash;8396</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img src={envelope.src} width="12" alt="Envelope icon" />
+            <span>mbgausachs@gmail.com</span>
+          </div>
+          {
+            /* <a target="_blank" href="https://mbgaus.design">
+          <div class="flex items-center gap-1">
+            <img src={globe.src} width="12" alt="Globe icon" />
+            <span>mbgaus.design</span>
+          </div>
+        </a>
+        <a target="_blank" href="https://github.com/mbgausach">
+          <div class="flex items-center gap-1">
+            <img src={github.src} width="12" height="12" alt="GitHub icon" />
+            <span>mbgausach</span>
+          </div>
+        </a> */
+          }
+          <a target="_blank" href="https://linkedin.com/in/mbgausachs">
+            <div class="flex items-center gap-1">
+              <img class="h-3" src={linkedin.src} alt="LinkedIn icon" />
+              <span>mbgausachs</span>
+            </div>
+          </a>
+        </div>
       </div>
-      <section
-        class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
-      >
-        <div class="flex flex-col">
-          <div class="text-2xl">{t('education.title')}</div>
-          <div class="w-full border-b border-slate-900 px-0"></div>
-        </div>
-        <ul class="flex flex-col gap-1">
-          <li class="flex flex-col gap-2">
-            <div class="flex flex-col">
-              <p class="text-lg font-semibold">
-                Universidad de Ciencias Empresariales y Sociales
+      <img
+        class="mr-14 h-48 rounded-full print:h-52"
+        src={profile.src}
+        alt="Avatar"
+      />
+    </div>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">{t('education.title')}</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-1">
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-col">
+            <p class="text-lg font-semibold">
+              Universidad de Ciencias Empresariales y Sociales
+            </p>
+            <div class="flex flex-col text-sm">
+              <p>{t('education.marketing.degree')}</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">
+                {t('education.marketing.start-date')} - {
+                  t('education.marketing.end-date')
+                }
               </p>
-              <div class="flex flex-col text-sm">
-                <p>{t('education.marketing.degree')}</p>
-                <p class="font-light">Buenos Aires, Argentina</p>
-                <p class="font-light">
-                  {t('education.marketing.start-date')} - {
-                    t('education.marketing.end-date')
-                  }
-                </p>
-                <ul class="mx-2 list-inside list-disc p-1">
-                  <li>
-                    {t('education.marketing.comment')}
-                  </li>
-                </ul>
-              </div>
+              <ul class="mx-2 list-inside list-disc p-1">
+                <li>
+                  {t('education.marketing.comment')}
+                </li>
+              </ul>
             </div>
-          </li>
-          <li class="flex flex-col gap-2">
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-col">
+            <p class="text-lg font-semibold">Universidad de Buenos Aires</p>
+            <div class="flex flex-col text-sm">
+              <p>{t('education.strategic-mkt.degree')}</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">
+                {t('education.strategic-mkt.start-date')} - {
+                  t('education.strategic-mkt.end-date')
+                }
+              </p>
+              <ul class="mx-2 list-inside list-disc p-1">
+                <li>
+                  <span class="italic"
+                    >&quot;{t('education.strategic-mkt.thesis')}&quot;</span
+                  >
+                </li>
+                <li>{t('education.strategic-mkt.grade')}</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-col">
+            <p class="text-lg font-semibold">Universidad Favaloro</p>
+            <div class="flex flex-col text-sm">
+              <p>{t('education.nutrition.degree')}</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <p class="font-light">
+                {t('education.nutrition.start-date')} - {
+                  t('education.nutrition.end-date')
+                }
+              </p>
+              <ul class="mx-2 list-inside list-disc p-1">
+                <li>
+                  <span class="italic"
+                    >&quot;{t('education.nutrition.thesis')}&quot;</span
+                  >
+                </li>
+                <li>{t('education.nutrition.grade')}</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">{t('experience.title')}</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <ul class="flex flex-col">
+        <li
+          class="page-break-always flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
+        >
+          <div class="flex gap-2">
             <div class="flex flex-col">
-              <p class="text-lg font-semibold">Universidad de Buenos Aires</p>
-              <div class="flex flex-col text-sm">
-                <p>{t('education.strategic-mkt.degree')}</p>
-                <p class="font-light">Buenos Aires, Argentina</p>
-                <p class="font-light">
-                  {t('education.strategic-mkt.start-date')} - {
-                    t('education.strategic-mkt.end-date')
-                  }
-                </p>
-                <ul class="mx-2 list-inside list-disc p-1">
-                  <li>
-                    <span class="italic"
-                      >&quot;{t('education.strategic-mkt.thesis')}&quot;</span
-                    >
-                  </li>
-                  <li>{t('education.strategic-mkt.grade')}</li>
-                </ul>
-              </div>
+              <img class="h-10 max-w-none sm:h-12" src={compass.src} />
             </div>
-          </li>
-          <li class="flex flex-col gap-2">
             <div class="flex flex-col">
-              <p class="text-lg font-semibold">Universidad Favaloro</p>
-              <div class="flex flex-col text-sm">
-                <p>{t('education.nutrition.degree')}</p>
-                <p class="font-light">Buenos Aires, Argentina</p>
-                <p class="font-light">
-                  {t('education.nutrition.start-date')} - {
-                    t('education.nutrition.end-date')
-                  }
-                </p>
-                <ul class="mx-2 list-inside list-disc p-1">
-                  <li>
-                    <span class="italic"
-                      >&quot;{t('education.nutrition.thesis')}&quot;</span
-                    >
-                  </li>
-                  <li>{t('education.nutrition.grade')}</li>
-                </ul>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section
-        class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
-      >
-        <div class="flex flex-col">
-          <div class="text-2xl">{t('experience.title')}</div>
-          <div class="w-full border-b border-slate-900 px-0"></div>
-        </div>
-        <ul class="flex flex-col">
-          <li
-            class="page-break-always flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
-          >
-            <div class="flex gap-2">
-              <div class="flex flex-col">
-                <img class="h-10 max-w-none sm:h-12" src={compass.src} />
-              </div>
-              <div class="flex flex-col">
-                <p class="mr-auto text-lg font-semibold">
-                  Compass Group Argentina
-                </p>
-                <p class="mr-auto text-sm print:hidden">{t('experience.compass.years')}</p>
-                <ul>
-                  <li class="relative mt-2 flex flex-col text-sm">
-                    <span
-                      class="absolute left-[calc(-2.2rem-6.5px/2)] top-3 block h-2 w-2 rounded-lg bg-gray-400"
-                    ></span>
-                    <div
-                      class="before:absolute before:left-[calc(-2.2rem-1px/2)] before:top-[calc(calc(1.2rem+.8rem)+.1rem)] before:h-[calc(100%-(1.8rem))] before:w-[2px] before:bg-gray-300 before:content-['']"
-                    >
-                      <p class="text-lg font-semibold">
-                        {t('experience.compass.analyst.role')}
-                      </p>
-                      <p class="font-light">Buenos Aires, Argentina</p>
-                      <div class="flex gap-1 sm:gap-2">
-                        <p class="font-light">{t('experience.compass.analyst.from_to')}</p> 
-                        <p class="flex print:hidden">&bullet; {t('experience.compass.analyst.years')}</p>
-                      </div>
-                      <ul
-                        class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
-                      >
-                        {
-                          t('experience.compass.analyst').map((item) => (
-                            <li>{item}</li>
-                          ))
-                        }
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="relative mt-2 flex flex-col text-sm">
-                    <span
-                      class="absolute left-[calc(-2.2rem-6.5px/2)] top-3 block h-2 w-2 rounded-lg bg-gray-400"
-                    ></span>
+              <p class="mr-auto text-lg font-semibold">
+                Compass Group Argentina
+              </p>
+              <p class="mr-auto text-sm print:hidden">
+                {t('experience.compass.years')}
+              </p>
+              <ul>
+                <li class="relative mt-2 flex flex-col text-sm">
+                  <span
+                    class="absolute left-[calc(-2.2rem-6.5px/2)] top-3 block h-2 w-2 rounded-lg bg-gray-400"
+                  ></span>
+                  <div
+                    class="before:absolute before:left-[calc(-2.2rem-1px/2)] before:top-[calc(calc(1.2rem+.8rem)+.1rem)] before:h-[calc(100%-(1.8rem))] before:w-[2px] before:bg-gray-300 before:content-['']"
+                  >
                     <p class="text-lg font-semibold">
-                      {t('experience.compass.manager.role')}
+                      {t('experience.compass.analyst.role')}
                     </p>
                     <p class="font-light">Buenos Aires, Argentina</p>
                     <div class="flex gap-1 sm:gap-2">
-                      <p class="font-light">Nov. 2019 - Sep. 2022</p> &bullet; <p
-                      >
-                        {t('experience.compass.manager.years')}
+                      <p class="font-light">
+                        {t('experience.compass.analyst.from_to')}
+                      </p>
+                      <p class="flex print:hidden">
+                        &bullet; {t('experience.compass.analyst.years')}
                       </p>
                     </div>
                     <ul
                       class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                     >
                       {
-                        t('experience.compass.manager').map((item) => (
+                        t('experience.compass.analyst').map((item) => (
                           <li>{item}</li>
                         ))
                       }
                     </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
-          >
-            <div class="flex gap-2">
-              <div>
-                <img class="h-10 max-w-none sm:h-12" src={sodexo.src} />
-              </div>
-              <div class="flex flex-col">
-                <p class="text-lg font-semibold">
-                  {t('experience.sodexo.manager.role')}
-                </p>
-                <div class="flex flex-col text-sm">
-                  <p>Sodexo</p>
+                  </div>
+                </li>
+                <li class="relative mt-2 flex flex-col text-sm">
+                  <span
+                    class="absolute left-[calc(-2.2rem-6.5px/2)] top-3 block h-2 w-2 rounded-lg bg-gray-400"
+                  ></span>
+                  <p class="text-lg font-semibold">
+                    {t('experience.compass.manager.role')}
+                  </p>
                   <p class="font-light">Buenos Aires, Argentina</p>
                   <div class="flex gap-1 sm:gap-2">
-                    <p class="font-light">
-                      {t('experience.sodexo.manager.from_to')}
+                    <p class="font-light">Nov. 2019 - Sep. 2022</p> &bullet; <p>
+                      {t('experience.compass.manager.years')}
                     </p>
-                    &bullet;
-                    {t('experience.sodexo.manager.years')}
                   </div>
                   <ul
                     class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                   >
                     {
-                      t('experience.sodexo.manager').map((item) => (
+                      t('experience.compass.manager').map((item) => (
                         <li>{item}</li>
                       ))
                     }
                   </ul>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
-          </li>
-          <li class="flex flex-col pb-3 pt-3 print:border-0">
-            <div class="flex gap-2">
-              <div>
-                <img class="h-10 max-w-none sm:h-12" src={amia.src} />
-              </div>
-              <div class="mr-auto flex flex-col text-sm">
-                <p class="text-lg font-semibold">
-                  {t('experience.amia.lecturer.role')}
-                </p>
-                <p>AMIA</p>
+          </div>
+        </li>
+        <li
+          class="flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
+        >
+          <div class="flex gap-2">
+            <div>
+              <img class="h-10 max-w-none sm:h-12" src={sodexo.src} />
+            </div>
+            <div class="flex flex-col">
+              <p class="text-lg font-semibold">
+                {t('experience.sodexo.manager.role')}
+              </p>
+              <div class="flex flex-col text-sm">
+                <p>Sodexo</p>
                 <p class="font-light">Buenos Aires, Argentina</p>
                 <div class="flex gap-1 sm:gap-2">
-                  <p class="font-light">Oct. 2018 - Oct. 2019</p>
+                  <p class="font-light">
+                    {t('experience.sodexo.manager.from_to')}
+                  </p>
                   &bullet;
-                  {t('experience.amia.lecturer.years')}
+                  {t('experience.sodexo.manager.years')}
                 </div>
                 <ul
                   class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                 >
-                  {t('experience.amia.lecturer').map((item) => <li>{item}</li>)}
+                  {
+                    t('experience.sodexo.manager').map((item) => (
+                      <li>{item}</li>
+                    ))
+                  }
                 </ul>
               </div>
             </div>
+          </div>
+        </li>
+        <li class="flex flex-col pb-3 pt-3 print:border-0">
+          <div class="flex gap-2">
+            <div>
+              <img class="h-10 max-w-none sm:h-12" src={amia.src} />
+            </div>
+            <div class="mr-auto flex flex-col text-sm">
+              <p class="text-lg font-semibold">
+                {t('experience.amia.lecturer.role')}
+              </p>
+              <p>AMIA</p>
+              <p class="font-light">Buenos Aires, Argentina</p>
+              <div class="flex gap-1 sm:gap-2">
+                <p class="font-light">Oct. 2018 - Oct. 2019</p>
+                &bullet;
+                {t('experience.amia.lecturer.years')}
+              </div>
+              <ul
+                class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
+              >
+                {t('experience.amia.lecturer').map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">{t('skills.title')}</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <ul class="flex flex-col gap-4">
+        <li class="flex flex-col gap-2 pr-14">
+          <span class="font-semibold">Marketing</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Market Research</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Strategy</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Planning</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >SEO</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >SEM</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Content Marketing</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Social Media Marketing
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Email Marketing
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Promotional Marketing
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Copywriting</span
+            >
+          </div>
+        </li>
+        <li class={pageBreak + ' flex flex-col gap-2 pr-14'}>
+          <span class="font-semibold">Branding</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Storytelling</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Positioning</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Messaging</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Visual Identity</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Customer Experience</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Competitive Analysis</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Brand Strategy
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Brand Management
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Metrics &amp; Analysis
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Cultural Awareness</span
+            >
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 pr-14">
+          <span class="font-semibold">{t('skills.design.title')}</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Visual Communication</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Usability &amp; Accesibility
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Typography &amp; Layout</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Color Theory &amp; Harmony</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Branding Alignment
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Motion Graphics
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              UX/UI Design
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Trend Awareness
+            </span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 pr-14">
+          <span class="font-semibold">{t('skills.data-analysis.title')}</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Statistics &amp; Probability</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Data Visualization</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              SQL Querying
+            </span>
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+            >
+              Ethical Considerations
+            </span>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 pr-14">
+          <span class="font-semibold">Software</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Figma</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Canva</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Adobe Illustrator</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Adobe Photoshop</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Adobe Premiere Pro</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Excel</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Google Sheets</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Notion</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Slack</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Microsoft Teams</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Facebook Ads</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Instagram Ads</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >HTML</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >JavaScript</span
+            >
+          </div>
+        </li>
+        <li class="flex flex-col gap-2 pr-14">
+          <span class="font-semibold">{t('skills.other.title')}</span>
+          <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Teamwork</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Ownership</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Communication</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Adapatability</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Resilience</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Time Management</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Active Listening</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Creativity</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Innovation</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Negotiation</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Conflict Resolution</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Leadership</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Self-motivated</span
+            >
+            <span
+              class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
+              >Public Speaking</span
+            >
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">{t('languages.title')}</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <div>
+        <ul class="flex flex-col">
+          <li
+            class="flex flex-col border-b border-b-gray-300 pb-2 print:border-0"
+          >
+            <span class="font-semibold">{t('languages.spanish')}</span>
+            <span class="text-sm">{t('languages.native')}</span>
+          </li>
+          <li class="mt-2 flex flex-col">
+            <span class="font-semibold">{t('languages.english')}</span>
+            <span class="text-sm">{t('languages.proficient')}</span>
           </li>
         </ul>
-      </section>
-      <section
-        class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
-      >
-        <div class="flex flex-col">
-          <div class="text-2xl">{t('skills.title')}</div>
-          <div class="w-full border-b border-slate-900 px-0"></div>
-        </div>
-        <ul class="flex flex-col gap-4">
-          <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">Marketing</span>
-            <div
-              class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
+      </div>
+    </section>
+    <section
+      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+    >
+      <div class="flex flex-col">
+        <div class="text-2xl">{t('certifications.title')}</div>
+        <div class="w-full border-b border-slate-900 px-0"></div>
+      </div>
+      <ul class="my-2 grid grid-cols-2 text-xs sm:text-sm">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1-Rmzw5IZtN32IpaQScDJHugdP9v6tH2H/view?usp=sharing"
+        >
+          <li class="mb-4 flex flex-col">
+            <span class="font-semibold">Photoshop &amp; Illustrator</span>
+            <div class="flex gap-1">
+              <img class="h-4 max-w-none sm:h-5" src={coder.src} />
+              <span>Coderhouse</span>
+            </div>
+            <span>{t('certifications.coderhouse.issued')}</span>
+          </li>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.credly.com/badges/004b3545-2b00-4301-a225-48a87b82e4fb?source=linked_in_profile"
+        >
+          <li class="mb-4 flex flex-col">
+            <span class="font-semibold"
+              >Meta Certified Digital Marketing Associate</span
             >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Market Research</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Strategy</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Planning</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >SEO</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >SEM</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Content Marketing</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Social Media Marketing
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Email Marketing
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Promotional Marketing
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Copywriting</span
+            <div class="flex gap-1">
+              <img class="h-4 max-w-none sm:h-5" src={facebook.src} /><span
+                >Meta</span
               >
             </div>
+            <span>{t('certifications.meta.issued')}</span>
           </li>
-          <li class={pageBreak + " flex flex-col gap-2 pr-14"}>
-            <span class="font-semibold">Branding</span>
-            <div
-              class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
-            >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Storytelling</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Positioning</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Messaging</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Visual Identity</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Customer Experience</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Competitive Analysis</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Brand Strategy
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Brand Management
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Metrics &amp; Analysis
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Cultural Awareness</span
+        </a>
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1dpPTddSs2Dk61_veBUkk4V1Y8U_59rah/view?usp=sharing"
+        >
+          <li class="mb-4 flex flex-col">
+            <span class="font-semibold">E-commerce and Digital Marketing</span>
+            <div class="flex gap-1">
+              <img class="h-4 max-w-none sm:h-5" src={gcba.src} /><span
+                >GCBA</span
               >
             </div>
+            <span>{t('certifications.gcba.issued')}</span>
           </li>
-          <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">{t('skills.design.title')}</span>
-            <div
-              class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
-            >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Visual Communication</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Usability &amp; Accesibility
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Typography &amp; Layout</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Color Theory &amp; Harmony</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Branding Alignment
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Motion Graphics
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                UX/UI Design
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Trend Awareness
-              </span>
-            </div>
-          </li>
-          <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">{t('skills.data-analysis.title')}</span>
-            <div
-              class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
-            >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Statistics &amp; Probability</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Data Visualization</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                SQL Querying
-              </span>
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-              >
-                Ethical Considerations
-              </span>
-            </div>
-          </li>
-          <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">Software</span>
-            <div
-              class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
-            >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Figma</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Canva</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Adobe Illustrator</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Adobe Photoshop</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Adobe Premiere Pro</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Excel</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Google Sheets</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Notion</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Slack</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Microsoft Teams</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Facebook Ads</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Instagram Ads</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >HTML</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >JavaScript</span
-              >
-            </div>
-          </li>
-          <li class="flex flex-col gap-2 pr-14">
-            <span class="font-semibold">{t('skills.other.title')}</span>
-            <div
-              class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
-            >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Teamwork</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Ownership</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Communication</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Adapatability</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Resilience</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Time Management</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Active Listening</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Creativity</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Innovation</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Negotiation</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Conflict Resolution</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Leadership</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Self-motivated</span
-              >
-              <span
-                class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
-                >Public Speaking</span
-              >
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section
-        class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
-      >
-        <div class="flex flex-col">
-          <div class="text-2xl">{t('languages.title')}</div>
-          <div class="w-full border-b border-slate-900 px-0"></div>
-        </div>
-        <div>
-          <ul class="flex flex-col">
-            <li
-              class="flex flex-col border-b border-b-gray-300 pb-2 print:border-0"
-            >
-              <span class="font-semibold">{t('languages.spanish')}</span>
-              <span class="text-sm">{t('languages.native')}</span>
-            </li>
-            <li class="mt-2 flex flex-col">
-              <span class="font-semibold">{t('languages.english')}</span>
-              <span class="text-sm">{t('languages.proficient')}</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section
-        class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
-      >
-        <div class="flex flex-col">
-          <div class="text-2xl">{t('certifications.title')}</div>
-          <div class="w-full border-b border-slate-900 px-0"></div>
-        </div>
-        <ul class="my-2 grid grid-cols-2 text-xs sm:text-sm">
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1-Rmzw5IZtN32IpaQScDJHugdP9v6tH2H/view?usp=sharing"
-          >
-            <li class="mb-4 flex flex-col">
-              <span class="font-semibold">Photoshop &amp; Illustrator</span>
-              <div class="flex gap-1">
-                <img class="h-4 max-w-none sm:h-5" src={coder.src} />
-                <span>Coderhouse</span>
-              </div>
-              <span>{t('certifications.coderhouse.issued')}</span>
-            </li>
-          </a>
-          <a
-            target="_blank"
-            href="https://www.credly.com/badges/004b3545-2b00-4301-a225-48a87b82e4fb?source=linked_in_profile"
-          >
-            <li class="mb-4 flex flex-col">
-              <span class="font-semibold"
-                >Meta Certified Digital Marketing Associate</span
-              >
-              <div class="flex gap-1">
-                <img class="h-4 max-w-none sm:h-5" src={facebook.src} /><span
-                  >Meta</span
-                >
-              </div>
-              <span>{t('certifications.meta.issued')}</span>
-            </li>
-          </a>
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1dpPTddSs2Dk61_veBUkk4V1Y8U_59rah/view?usp=sharing"
-          >
-            <li class="mb-4 flex flex-col">
-              <span class="font-semibold">E-commerce and Digital Marketing</span
-              >
-              <div class="flex gap-1">
-                <img class="h-4 max-w-none sm:h-5" src={gcba.src} /><span
-                  >GCBA</span
-                >
-              </div>
-              <span>{t('certifications.gcba.issued')}</span>
-            </li>
-          </a>
-        </ul>
-      </section>
-    </div>
-  </main>
+        </a>
+      </ul>
+    </section>
+  </div>
 </Layout>
