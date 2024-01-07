@@ -15,7 +15,11 @@ import coder from '@/assets/coder-logo.jpeg';
 
 import { useTranslations } from '../i18n/utils';
 
-const t = useTranslations('en');
+const lang = "es";
+
+const pageBreak = lang == "en" ? "page-break" : ""
+
+const t = useTranslations(lang);
 ---
 
 <Layout title="Bel > Resume">
@@ -70,7 +74,7 @@ const t = useTranslations('en');
         />
       </div>
       <section
-        class="page-break-always mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+        class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
       >
         <div class="flex flex-col">
           <div class="text-2xl">{t('education.title')}</div>
@@ -163,7 +167,7 @@ const t = useTranslations('en');
                 <p class="mr-auto text-lg font-semibold">
                   Compass Group Argentina
                 </p>
-                <p class="mr-auto text-sm">4 yrs 4 mos</p>
+                <p class="mr-auto text-sm print:hidden">{t('experience.compass.years')}</p>
                 <ul>
                   <li class="relative mt-2 flex flex-col text-sm">
                     <span
@@ -177,10 +181,8 @@ const t = useTranslations('en');
                       </p>
                       <p class="font-light">Buenos Aires, Argentina</p>
                       <div class="flex gap-1 sm:gap-2">
-                        <p class="font-light">Sep. 2022 - Present</p> &bullet; <p
-                        >
-                          {t('experience.compass.analyst.years')}
-                        </p>
+                        <p class="font-light">{t('experience.compass.analyst.from_to')}</p> 
+                        <p class="flex print:hidden">&bullet; {t('experience.compass.analyst.years')}</p>
                       </div>
                       <ul
                         class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
@@ -339,7 +341,7 @@ const t = useTranslations('en');
               >
             </div>
           </li>
-          <li class="flex flex-col gap-2 pr-14">
+          <li class={pageBreak + " flex flex-col gap-2 pr-14"}>
             <span class="font-semibold">Branding</span>
             <div
               class="flex flex-wrap gap-1 text-center text-sm text-slate-200"
