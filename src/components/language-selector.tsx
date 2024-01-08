@@ -1,43 +1,43 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from '@/components/ui/command';
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { cn } from '@/lib/utils';
-import { Check, ChevronsDown, Languages } from 'lucide-react';
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { Check, ChevronsDown, Languages } from "lucide-react";
 
 const languages = [
   {
-    value: 'en',
-    label: 'EN',
+    value: "en",
+    label: "EN",
   },
   {
-    value: 'es',
-    label: 'ES',
+    value: "es",
+    label: "ES",
   },
 ];
 
 const LanguageSelector = () => {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState("");
 
   React.useEffect(() => {
-    const locale = new URLSearchParams(window.location.search).get('locale');
-    setValue(locale ? locale : 'en');
+    const locale = new URLSearchParams(window.location.search).get("locale");
+    setValue(locale ? locale : "en");
   }, []);
 
   const onSelect = (currentValue: string) => {
-    setValue(currentValue === value ? '' : currentValue);
+    setValue(currentValue === value ? "" : currentValue);
     setOpen(false);
 
     window.location.href = `/?locale=${currentValue}`;
@@ -55,7 +55,7 @@ const LanguageSelector = () => {
             <Languages />
             {value
               ? languages.find((language) => language.value === value)?.label
-              : ''}
+              : ""}
           </div>
           <ChevronsDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -79,8 +79,8 @@ const LanguageSelector = () => {
               >
                 <Check
                   className={cn(
-                    'mr-2 h-4 w-4',
-                    value === language.value ? 'opacity-100' : 'opacity-0',
+                    "mr-2 h-4 w-4",
+                    value === language.value ? "opacity-100" : "opacity-0",
                   )}
                 />
                 {language.label}

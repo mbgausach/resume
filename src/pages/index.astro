@@ -191,7 +191,7 @@ const t = useTranslations(lang ? lang : 'en');
                       class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                     >
                       {
-                        t('experience.compass.analyst').map((item) => (
+                        (t('experience.compass.analyst') as string[]).map((item: string) => (
                           <li>{item}</li>
                         ))
                       }
@@ -215,7 +215,7 @@ const t = useTranslations(lang ? lang : 'en');
                     class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                   >
                     {
-                      t('experience.compass.manager').map((item) => (
+                      (t('experience.compass.manager') as string[]).map((item) => (
                         <li>{item}</li>
                       ))
                     }
@@ -250,7 +250,7 @@ const t = useTranslations(lang ? lang : 'en');
                   class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                 >
                   {
-                    t('experience.sodexo.manager').map((item) => (
+                    (t('experience.sodexo.manager') as string[]).map((item) => (
                       <li>{item}</li>
                     ))
                   }
@@ -278,7 +278,7 @@ const t = useTranslations(lang ? lang : 'en');
               <ul
                 class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
               >
-                {t('experience.amia.lecturer').map((item) => <li>{item}</li>)}
+                {(t('experience.amia.lecturer') as string[]).map((item) => <li>{item}</li>)}
               </ul>
             </div>
           </div>
