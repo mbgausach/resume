@@ -17,7 +17,6 @@ import coder from "@/assets/coder-logo.jpeg";
 import { useTranslations } from "@/i18n/utils";
 
 const lang = Astro.url.searchParams.get("locale");
-const pageBreak = lang == "en" ? "page-break" : "";
 const t = useTranslations(lang ? lang : "en");
 ---
 
@@ -325,7 +324,7 @@ const t = useTranslations(lang ? lang : "en");
       </ul>
     </section>
     <section
-      class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
+      class="page-break mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
     >
       <div class="flex flex-col">
         <div class="text-2xl">{t("skills.title")}</div>
@@ -380,7 +379,7 @@ const t = useTranslations(lang ? lang : "en");
             >
           </div>
         </li>
-        <li class={pageBreak + " flex flex-col gap-2 pr-14"}>
+        <li class="flex flex-col gap-2 pr-14">
           <span class="font-semibold">Branding</span>
           <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
             <span
@@ -689,7 +688,10 @@ const t = useTranslations(lang ? lang : "en");
             <span>{t("certifications.gcba.issued")}</span>
           </li>
         </a>
-        <a target="_blank" href="">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/10RmH3C5IteeUIwacxfIWkVf0JAMleDma/view"
+        >
           <li class="mb-4 flex flex-col">
             <span class="font-semibold">UX/UI Design</span>
             <div class="flex gap-1">
