@@ -22,10 +22,22 @@ export const ui: Record<string, Record<string, string | Array<string>>> = {
       "Teacher Training Project on Healthy Eating Habits in the First Cycle of Education",
     "education.nutrition.grade": "Overall grade: 7/10",
     "experience.title": "Experience",
+    "experience.grupol.analyst.role": "Senior Marketing Analyst",
+    "experience.grupol.analyst.years": "1 yr",
+    "experience.grupol.analyst.from_to": "Oct. 2023 - Present",
+    "experience.grupol.analyst": [
+      "Creation and design of graphic pieces for points of sale or customer contact points, as well as for internal and external communication.",
+      "Responsible for strategic planning, coordination, and execution of content with external communication agencies (social media and web).",
+      "Control billing and budget management for the area.",
+      "Communicate and manage external suppliers.",
+      "Develop and peform analysis of customer satisfaction surveys.",
+      "Develop customer loyalty programs based on company proposals (disruptive actions in customers' routines, such as on special dates or creating themed days or unique lunch experiences).",
+      "Develop, manage, and position brands' presence in different dining halls.",
+    ],
     "experience.compass.years": "4 yrs 4 mos",
     "experience.compass.analyst.role": "Marketing Analyst",
-    "experience.compass.analyst.years": "1 yr 5 mos",
-    "experience.compass.analyst.from_to": "Sep. 2022 - Present",
+    "experience.compass.analyst.years": "1 yr 1 mos",
+    "experience.compass.analyst.from_to": "Sep. 2022 - Oct. 2023",
     "experience.compass.analyst": [
       "Implementation and analysis of satisfaction surveys to improve the customer experience.",
       "Responsible for the area's billing, ensuring the accuracy and compliance of financial processes.",
@@ -72,6 +84,7 @@ export const ui: Record<string, Record<string, string | Array<string>>> = {
     "certifications.coderhouse.issued": "Issued May 2023",
     "certifications.meta.issued": "Issued Jun 2022",
     "certifications.gcba.issued": "Issued Sep 2021",
+    "certifications.uxui.issued": "Issued Apr 2024",
   },
   es: {
     mos: "mes",
@@ -95,10 +108,22 @@ export const ui: Record<string, Record<string, string | Array<string>>> = {
       "Proyecto de Capacitación Docente sobre Hábitos Saludables durante el Primer Ciclo Educativo.",
     "education.nutrition.grade": "Promedio final: 7/10",
     "experience.title": "Experiencia",
+    "experience.grupol.analyst.role": "Analista Senior de Marketing",
+    "experience.grupol.analyst.years": "1 año",
+    "experience.grupol.analyst.from_to": "Oct. 2023 - Presente",
+    "experience.grupol.analyst": [
+      "Creación y diseño de piezas gráficas para puntos de venta o puntos de contacto con el cliente, así como para comunicación interna y externa.",
+      "Responsable de la planificación estratégica, coordinación y ejecución de contenidos con agencias externas de comunicación (redes sociales y web).",
+      "Control de facturación y gestión presupuestaria del área.",
+      "Comunicar y gestionar proveedores externos.",
+      "Desarrollar y realizar análisis de encuestas de satisfacción de clientes.",
+      "Desarrollar programas de fidelización de clientes basados en propuestas de la empresa (acciones disruptivas en las rutinas de los clientes, como en fechas especiales o creación de días temáticos o experiencias de almuerzo únicas).",
+      "Desarrollar, gestionar y posicionar la presencia de las marcas en diferentes comedores.",
+    ],
     "experience.compass.years": "4 años 4 meses", // TODO: update
     "experience.compass.analyst.role": "Analista de Marketing",
     "experience.compass.analyst.years": "1 año 5 meses", // TODO: update
-    "experience.compass.analyst.from_to": "Sep. 2022 - Presente",
+    "experience.compass.analyst.from_to": "Sep. 2022 - Oct. 2023",
     "experience.compass.analyst": [
       "Implementación y análisis de encuestas de satisfacción para mejorar la experiencia del cliente.",
       "Responsable de la facturación del área, garantizando la precisión y el cumplimiento de los procesos financieros.",
@@ -145,5 +170,6 @@ export const ui: Record<string, Record<string, string | Array<string>>> = {
     "certifications.coderhouse.issued": "Emitido en mayo 2023",
     "certifications.meta.issued": "Emitido en junio 2022",
     "certifications.gcba.issued": "Emitido en septiembre 2021",
+    "certifications.uxui.issued": "Emitido en april 2024",
   },
 } as const;

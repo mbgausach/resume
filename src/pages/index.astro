@@ -1,23 +1,24 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import pin from '@/assets/map-pin.svg';
-import linkedin from '@/assets/linkedin.svg';
-import mobile from '@/assets/device-phone-mobile.svg';
-import envelope from '@/assets/envelope.svg';
-import profile from '@/assets/bel.jpg';
-import compass from '@/assets/compass-group-logo.jpeg';
-import sodexo from '@/assets/sodexo-logo.jpeg';
-import amia from '@/assets/amia-logo.jpeg';
-import facebook from '@/assets/meta-logo.jpeg';
-import gcba from '@/assets/gcba-logo.jpeg';
-import coder from '@/assets/coder-logo.jpeg';
+import pin from "@/assets/map-pin.svg";
+import linkedin from "@/assets/linkedin.svg";
+import mobile from "@/assets/device-phone-mobile.svg";
+import envelope from "@/assets/envelope.svg";
+import profile from "@/assets/bel.jpg";
+import compass from "@/assets/compass-group-logo.jpeg";
+import sodexo from "@/assets/sodexo-logo.jpeg";
+import grupol from "@/assets/grupol-logo.jpeg";
+import amia from "@/assets/amia-logo.jpeg";
+import facebook from "@/assets/meta-logo.jpeg";
+import gcba from "@/assets/gcba-logo.jpeg";
+import coder from "@/assets/coder-logo.jpeg";
 
-import { useTranslations } from '@/i18n/utils';
+import { useTranslations } from "@/i18n/utils";
 
-const lang = Astro.url.searchParams.get('locale');
-const pageBreak = lang == 'en' ? 'page-break' : '';
-const t = useTranslations(lang ? lang : 'en');
+const lang = Astro.url.searchParams.get("locale");
+const pageBreak = lang == "en" ? "page-break" : "";
+const t = useTranslations(lang ? lang : "en");
 ---
 
 <Layout title="Bel > Resume">
@@ -74,7 +75,7 @@ const t = useTranslations(lang ? lang : 'en');
       class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
     >
       <div class="flex flex-col">
-        <div class="text-2xl">{t('education.title')}</div>
+        <div class="text-2xl">{t("education.title")}</div>
         <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col gap-1">
@@ -84,16 +85,16 @@ const t = useTranslations(lang ? lang : 'en');
               Universidad de Ciencias Empresariales y Sociales
             </p>
             <div class="flex flex-col text-sm">
-              <p>{t('education.marketing.degree')}</p>
+              <p>{t("education.marketing.degree")}</p>
               <p class="font-light">Buenos Aires, Argentina</p>
               <p class="font-light">
-                {t('education.marketing.start-date')} - {
-                  t('education.marketing.end-date')
+                {t("education.marketing.start-date")} - {
+                  t("education.marketing.end-date")
                 }
               </p>
               <ul class="mx-2 list-inside list-disc p-1">
                 <li>
-                  {t('education.marketing.comment')}
+                  {t("education.marketing.comment")}
                 </li>
               </ul>
             </div>
@@ -103,20 +104,20 @@ const t = useTranslations(lang ? lang : 'en');
           <div class="flex flex-col">
             <p class="text-lg font-semibold">Universidad de Buenos Aires</p>
             <div class="flex flex-col text-sm">
-              <p>{t('education.strategic-mkt.degree')}</p>
+              <p>{t("education.strategic-mkt.degree")}</p>
               <p class="font-light">Buenos Aires, Argentina</p>
               <p class="font-light">
-                {t('education.strategic-mkt.start-date')} - {
-                  t('education.strategic-mkt.end-date')
+                {t("education.strategic-mkt.start-date")} - {
+                  t("education.strategic-mkt.end-date")
                 }
               </p>
               <ul class="mx-2 list-inside list-disc p-1">
                 <li>
                   <span class="italic"
-                    >&quot;{t('education.strategic-mkt.thesis')}&quot;</span
+                    >&quot;{t("education.strategic-mkt.thesis")}&quot;</span
                   >
                 </li>
-                <li>{t('education.strategic-mkt.grade')}</li>
+                <li>{t("education.strategic-mkt.grade")}</li>
               </ul>
             </div>
           </div>
@@ -125,20 +126,20 @@ const t = useTranslations(lang ? lang : 'en');
           <div class="flex flex-col">
             <p class="text-lg font-semibold">Universidad Favaloro</p>
             <div class="flex flex-col text-sm">
-              <p>{t('education.nutrition.degree')}</p>
+              <p>{t("education.nutrition.degree")}</p>
               <p class="font-light">Buenos Aires, Argentina</p>
               <p class="font-light">
-                {t('education.nutrition.start-date')} - {
-                  t('education.nutrition.end-date')
+                {t("education.nutrition.start-date")} - {
+                  t("education.nutrition.end-date")
                 }
               </p>
               <ul class="mx-2 list-inside list-disc p-1">
                 <li>
                   <span class="italic"
-                    >&quot;{t('education.nutrition.thesis')}&quot;</span
+                    >&quot;{t("education.nutrition.thesis")}&quot;</span
                   >
                 </li>
-                <li>{t('education.nutrition.grade')}</li>
+                <li>{t("education.nutrition.grade")}</li>
               </ul>
             </div>
           </div>
@@ -149,10 +150,44 @@ const t = useTranslations(lang ? lang : 'en');
       class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
     >
       <div class="flex flex-col">
-        <div class="text-2xl">{t('experience.title')}</div>
+        <div class="text-2xl">{t("experience.title")}</div>
         <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col">
+        <li
+          class="flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
+        >
+          <div class="flex gap-2">
+            <div>
+              <img class="h-10 max-w-none sm:h-12" src={grupol.src} />
+            </div>
+            <div class="flex flex-col">
+              <p class="text-lg font-semibold">
+                {t("experience.grupol.analyst.role")}
+              </p>
+              <div class="flex flex-col text-sm">
+                <p>Grupo L</p>
+                <p class="font-light">Buenos Aires, Argentina</p>
+                <div class="flex gap-1 sm:gap-2">
+                  <p class="font-light">
+                    {t("experience.grupol.analyst.from_to")}
+                  </p>
+                  &bullet;
+                  {t("experience.grupol.analyst.years")}
+                </div>
+                <ul
+                  class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
+                >
+                  {
+                    (t("experience.grupol.analyst") as string[]).map((item) => (
+                      <li>{item}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
         <li
           class="page-break-always flex flex-col gap-2 border-b border-b-gray-300 pb-3 pt-3 print:border-0"
         >
@@ -165,7 +200,7 @@ const t = useTranslations(lang ? lang : 'en');
                 Compass Group Argentina
               </p>
               <p class="mr-auto text-sm print:hidden">
-                {t('experience.compass.years')}
+                {t("experience.compass.years")}
               </p>
               <ul>
                 <li class="relative mt-2 flex flex-col text-sm">
@@ -176,24 +211,24 @@ const t = useTranslations(lang ? lang : 'en');
                     class="before:absolute before:left-[calc(-2.2rem-1px/2)] before:top-[calc(calc(1.2rem+.8rem)+.1rem)] before:h-[calc(100%-(1.8rem))] before:w-[2px] before:bg-gray-300 before:content-['']"
                   >
                     <p class="text-lg font-semibold">
-                      {t('experience.compass.analyst.role')}
+                      {t("experience.compass.analyst.role")}
                     </p>
                     <p class="font-light">Buenos Aires, Argentina</p>
                     <div class="flex gap-1 sm:gap-2">
                       <p class="font-light">
-                        {t('experience.compass.analyst.from_to')}
+                        {t("experience.compass.analyst.from_to")}
                       </p>
                       <p class="flex print:hidden">
-                        &bullet; {t('experience.compass.analyst.years')}
+                        &bullet; {t("experience.compass.analyst.years")}
                       </p>
                     </div>
                     <ul
                       class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                     >
                       {
-                        (t('experience.compass.analyst') as string[]).map((item: string) => (
-                          <li>{item}</li>
-                        ))
+                        (t("experience.compass.analyst") as string[]).map(
+                          (item: string) => <li>{item}</li>,
+                        )
                       }
                     </ul>
                   </div>
@@ -203,21 +238,21 @@ const t = useTranslations(lang ? lang : 'en');
                     class="absolute left-[calc(-2.2rem-6.5px/2)] top-3 block h-2 w-2 rounded-lg bg-gray-400"
                   ></span>
                   <p class="text-lg font-semibold">
-                    {t('experience.compass.manager.role')}
+                    {t("experience.compass.manager.role")}
                   </p>
                   <p class="font-light">Buenos Aires, Argentina</p>
                   <div class="flex gap-1 sm:gap-2">
                     <p class="font-light">Nov. 2019 - Sep. 2022</p> &bullet; <p>
-                      {t('experience.compass.manager.years')}
+                      {t("experience.compass.manager.years")}
                     </p>
                   </div>
                   <ul
                     class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                   >
                     {
-                      (t('experience.compass.manager') as string[]).map((item) => (
-                        <li>{item}</li>
-                      ))
+                      (t("experience.compass.manager") as string[]).map(
+                        (item) => <li>{item}</li>,
+                      )
                     }
                   </ul>
                 </li>
@@ -234,23 +269,23 @@ const t = useTranslations(lang ? lang : 'en');
             </div>
             <div class="flex flex-col">
               <p class="text-lg font-semibold">
-                {t('experience.sodexo.manager.role')}
+                {t("experience.sodexo.manager.role")}
               </p>
               <div class="flex flex-col text-sm">
                 <p>Sodexo</p>
                 <p class="font-light">Buenos Aires, Argentina</p>
                 <div class="flex gap-1 sm:gap-2">
                   <p class="font-light">
-                    {t('experience.sodexo.manager.from_to')}
+                    {t("experience.sodexo.manager.from_to")}
                   </p>
                   &bullet;
-                  {t('experience.sodexo.manager.years')}
+                  {t("experience.sodexo.manager.years")}
                 </div>
                 <ul
                   class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
                 >
                   {
-                    (t('experience.sodexo.manager') as string[]).map((item) => (
+                    (t("experience.sodexo.manager") as string[]).map((item) => (
                       <li>{item}</li>
                     ))
                   }
@@ -266,19 +301,23 @@ const t = useTranslations(lang ? lang : 'en');
             </div>
             <div class="mr-auto flex flex-col text-sm">
               <p class="text-lg font-semibold">
-                {t('experience.amia.lecturer.role')}
+                {t("experience.amia.lecturer.role")}
               </p>
               <p>AMIA</p>
               <p class="font-light">Buenos Aires, Argentina</p>
               <div class="flex gap-1 sm:gap-2">
                 <p class="font-light">Oct. 2018 - Oct. 2019</p>
                 &bullet;
-                {t('experience.amia.lecturer.years')}
+                {t("experience.amia.lecturer.years")}
               </div>
               <ul
                 class="col-span-3 mt-2 flex list-inside list-disc flex-col text-sm sm:pr-14"
               >
-                {(t('experience.amia.lecturer') as string[]).map((item) => <li>{item}</li>)}
+                {
+                  (t("experience.amia.lecturer") as string[]).map((item) => (
+                    <li>{item}</li>
+                  ))
+                }
               </ul>
             </div>
           </div>
@@ -289,7 +328,7 @@ const t = useTranslations(lang ? lang : 'en');
       class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
     >
       <div class="flex flex-col">
-        <div class="text-2xl">{t('skills.title')}</div>
+        <div class="text-2xl">{t("skills.title")}</div>
         <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="flex flex-col gap-4">
@@ -341,7 +380,7 @@ const t = useTranslations(lang ? lang : 'en');
             >
           </div>
         </li>
-        <li class={pageBreak + ' flex flex-col gap-2 pr-14'}>
+        <li class={pageBreak + " flex flex-col gap-2 pr-14"}>
           <span class="font-semibold">Branding</span>
           <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
             <span
@@ -390,7 +429,7 @@ const t = useTranslations(lang ? lang : 'en');
           </div>
         </li>
         <li class="flex flex-col gap-2 pr-14">
-          <span class="font-semibold">{t('skills.design.title')}</span>
+          <span class="font-semibold">{t("skills.design.title")}</span>
           <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
             <span
               class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
@@ -431,7 +470,7 @@ const t = useTranslations(lang ? lang : 'en');
           </div>
         </li>
         <li class="flex flex-col gap-2 pr-14">
-          <span class="font-semibold">{t('skills.data-analysis.title')}</span>
+          <span class="font-semibold">{t("skills.data-analysis.title")}</span>
           <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
             <span
               class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
@@ -515,7 +554,7 @@ const t = useTranslations(lang ? lang : 'en');
           </div>
         </li>
         <li class="flex flex-col gap-2 pr-14">
-          <span class="font-semibold">{t('skills.other.title')}</span>
+          <span class="font-semibold">{t("skills.other.title")}</span>
           <div class="flex flex-wrap gap-1 text-center text-sm text-slate-200">
             <span
               class="flex items-center justify-center rounded-lg bg-purple-500 px-2"
@@ -581,7 +620,7 @@ const t = useTranslations(lang ? lang : 'en');
       class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
     >
       <div class="flex flex-col">
-        <div class="text-2xl">{t('languages.title')}</div>
+        <div class="text-2xl">{t("languages.title")}</div>
         <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <div>
@@ -589,12 +628,12 @@ const t = useTranslations(lang ? lang : 'en');
           <li
             class="flex flex-col border-b border-b-gray-300 pb-2 print:border-0"
           >
-            <span class="font-semibold">{t('languages.spanish')}</span>
-            <span class="text-sm">{t('languages.native')}</span>
+            <span class="font-semibold">{t("languages.spanish")}</span>
+            <span class="text-sm">{t("languages.native")}</span>
           </li>
           <li class="mt-2 flex flex-col">
-            <span class="font-semibold">{t('languages.english')}</span>
-            <span class="text-sm">{t('languages.proficient')}</span>
+            <span class="font-semibold">{t("languages.english")}</span>
+            <span class="text-sm">{t("languages.proficient")}</span>
           </li>
         </ul>
       </div>
@@ -603,7 +642,7 @@ const t = useTranslations(lang ? lang : 'en');
       class="mt-4 flex flex-col gap-2 rounded-lg border border-gray-300 bg-white p-6 print:border-0 print:p-0"
     >
       <div class="flex flex-col">
-        <div class="text-2xl">{t('certifications.title')}</div>
+        <div class="text-2xl">{t("certifications.title")}</div>
         <div class="w-full border-b border-slate-900 px-0"></div>
       </div>
       <ul class="my-2 grid grid-cols-2 text-xs sm:text-sm">
@@ -617,7 +656,7 @@ const t = useTranslations(lang ? lang : 'en');
               <img class="h-4 max-w-none sm:h-5" src={coder.src} />
               <span>Coderhouse</span>
             </div>
-            <span>{t('certifications.coderhouse.issued')}</span>
+            <span>{t("certifications.coderhouse.issued")}</span>
           </li>
         </a>
         <a
@@ -633,7 +672,7 @@ const t = useTranslations(lang ? lang : 'en');
                 >Meta</span
               >
             </div>
-            <span>{t('certifications.meta.issued')}</span>
+            <span>{t("certifications.meta.issued")}</span>
           </li>
         </a>
         <a
@@ -647,7 +686,18 @@ const t = useTranslations(lang ? lang : 'en');
                 >GCBA</span
               >
             </div>
-            <span>{t('certifications.gcba.issued')}</span>
+            <span>{t("certifications.gcba.issued")}</span>
+          </li>
+        </a>
+        <a target="_blank" href="">
+          <li class="mb-4 flex flex-col">
+            <span class="font-semibold">UX/UI Design</span>
+            <div class="flex gap-1">
+              <img class="h-4 max-w-none sm:h-5" src={coder.src} /><span
+                >Coderhouse</span
+              >
+            </div>
+            <span>{t("certifications.uxui.issued")}</span>
           </li>
         </a>
       </ul>
